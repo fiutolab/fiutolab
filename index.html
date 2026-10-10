@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FiuTO · Comunicazione e consulenza per locali a Torino</title>
+<meta name="description" content="Comunicazione e consulenza per locali e negozi di Torino. Fuori dal locale siti, social ed eventi; dentro scontrino medio, acquisti e problem solving. Parliamone davanti a un caffè.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://fiutolab.it/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5F4F0">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="FiuTO">
+<meta property="og:title" content="FiuTO · L'agenzia che non è un'agenzia">
+<meta property="og:description" content="Comunicazione e consulenza per locali e negozi di Torino. Qualità dell'agenzia, costo dei freelance.">
+<meta property="og:url" content="https://fiutolab.it/">
+<meta property="og:image" content="https://fiutolab.it/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=outfit:300,400,500,600|ibm-plex-mono:400,500&display=swap" rel="stylesheet">
+<style>
+/* Layout: un bar visto da fuori e da dentro. Apertura con la tesi, poi "fuori" in colonna pulita e "dentro" come uno scontrino. */
+:root {
+  --bg: #F5F4F0;
+  --surface: #ECEAE4;
+  --fg: #1C1C1A;
+  --muted: #5E5E58;
+  --line: #DAD7CF;
+  --wood: #4E3426;
+  --receipt: #FCFBF8;
+  --band: #1C1C1A;
+  --band-fg: #F5F4F0;
+  --band-muted: #A8A69F;
+  --band-wood: #B08660;
+  --font-display: 'Outfit', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-body: 'Outfit', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171614; --surface: #211F1C; --fg: #F2F0EA; --muted: #A8A49C; --line: #35322E;
+    --wood: #B08660; --receipt: #23211E; --band: #262420; --band-fg: #F2F0EA; --band-muted: #A8A49C; --band-wood: #C49A72;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171614; --surface: #211F1C; --fg: #F2F0EA; --muted: #A8A49C; --line: #35322E;
+  --wood: #B08660; --receipt: #23211E; --band: #262420; --band-fg: #F2F0EA; --band-muted: #A8A49C; --band-wood: #C49A72;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--wood); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow {
+  font-family: var(--font-mono); font-size: 12.5px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- Logo (costruito in CSS) ---------- */
+.logo {
+  font-family: var(--font-display); font-weight: 500; line-height: 1;
+  letter-spacing: -0.02em; white-space: nowrap; color: var(--fg);
+  display: inline-block; padding-top: 0.12em; text-decoration: none;
+}
+.logo .u { font-weight: 400; }
+.lg-i, .lg-t, .lg-o { position: relative; display: inline-block; }
+.lg-i span, .lg-t span, .lg-o span { position: absolute; display: block; }
+.lg-i { width: 0.26em; height: 0.64em; height: calc(1ex + 0.14em); margin: 0 -0.02em 0 0.01em; }
+.lg-i .stem { left: 0.085em; bottom: 0; width: 0.09em; height: 0.5em; height: 1ex; background: currentColor; }
+.lg-i .base { left: 0.035em; bottom: 0; width: 0.19em; height: 0.03em; border-radius: 999px; background: currentColor; }
+.lg-i .seat { left: 0.04em; top: 0; width: 0.2em; height: 0.07em; border-radius: 999px; background: var(--wood); }
+.lg-t { width: 0.62em; height: 0.81em; height: calc(1cap + 0.11em); margin-right: -0.02em; }
+.lg-t .stem { left: 0.26em; bottom: 0; width: 0.1em; height: 0.7em; height: 1cap; background: currentColor; }
+.lg-t .plank { left: -0.04em; top: 0; width: 0.82em; height: 0.11em; border-radius: 0.03em; background: var(--wood); }
+.lg-o { width: 0.72em; height: 0.72em; width: calc(1cap + 0.02em); height: calc(1cap + 0.02em); margin: 0 0.14em -0.01em 0.15em; }
+.lg-o .shadow { left: -0.06em; top: -0.015em; width: 0.9em; height: 0.9em; border-radius: 0.12em; background: var(--wood); transform: rotate(-10deg); }
+.lg-o .mat { left: -0.09em; top: -0.05em; width: 0.9em; height: 0.9em; border: 0.025em solid var(--wood); border-radius: 0.12em; background: var(--bg); transform: rotate(-10deg); }
+.lg-o .ring { inset: 0; border: 0.09em solid currentColor; border-radius: 50%; }
+
+/* ---------- Header ---------- */
+.site-header { padding-block: 22px; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.site-header .logo { font-size: 38px; }
+.nav { display: flex; gap: 6px 24px; flex-wrap: wrap; font-size: 15px; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--fg); }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: 48px 88px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.hero-text { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.hero h1 { font-weight: 600; font-size: clamp(40px, 6.4vw, 78px); line-height: 0.98; letter-spacing: -0.03em; }
+.hero .claim { font-family: var(--font-display); font-weight: 300; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.25; }
+.hero .intro { max-width: 56ch; color: var(--muted); }
+.hero .intro strong { color: var(--fg); font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px;
+  border-radius: 999px; font-family: var(--font-display); font-size: 16px; font-weight: 500;
+  text-decoration: none; border: 1.5px solid var(--fg); cursor: pointer;
+}
+.btn-primary { background: var(--fg); color: var(--bg); }
+.btn-primary:hover { background: var(--wood); border-color: var(--wood); color: var(--bg); }
+.btn-ghost { background: transparent; color: var(--fg); }
+.btn-ghost:hover { border-color: var(--wood); color: var(--wood); }
+.hero-mark { display: flex; justify-content: center; align-items: center; min-width: 0; }
+.hero-mark .lg-o { font-size: clamp(170px, 24vw, 280px); margin: 0.08em 0.1em 0.1em; color: var(--fg); transition: transform 0.5s ease; }
+.hero-mark:hover .lg-o { transform: rotate(-6deg); }
+
+/* ---------- Sezioni ---------- */
+.section { padding-block: 88px; border-top: 1px solid var(--line); }
+.section-head { display: flex; flex-direction: column; gap: 14px; max-width: 760px; margin-bottom: 48px; }
+.section-head h2 { font-weight: 600; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.02; letter-spacing: -0.025em; }
+.section-head .lead { color: var(--muted); max-width: 60ch; font-size: 18px; }
+
+/* Fuori e dentro */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.col-title { display: flex; flex-direction: column; gap: 4px; padding-bottom: 14px; border-bottom: 2px solid var(--fg); margin-bottom: 6px; }
+.col-title h3 { font-weight: 600; font-size: 26px; letter-spacing: -0.015em; }
+.fuori-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 28px; }
+.fuori-list li { display: flex; flex-direction: column; gap: 2px; padding-block: 14px; border-bottom: 1px solid var(--line); min-width: 0; }
+.fuori-list b { font-weight: 500; font-size: 17px; }
+.fuori-list span { color: var(--muted); font-size: 15px; line-height: 1.45; }
+
+.receipt-wrap { position: relative; padding-bottom: 12px; filter: drop-shadow(0 10px 18px rgba(28, 28, 26, 0.10)); }
+.receipt {
+  position: relative; background: var(--receipt); color: var(--fg);
+  font-family: var(--font-mono); font-size: 14px; line-height: 1.5;
+  padding: 30px 28px 26px; display: flex; flex-direction: column; gap: 16px;
+}
+.receipt::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 10px;
+  background:
+    linear-gradient(-135deg, var(--receipt) 7px, transparent 0) 0 0 / 14px 10px repeat-x,
+    linear-gradient(135deg, var(--receipt) 7px, transparent 0) 0 0 / 14px 10px repeat-x;
+}
+.receipt .r-head { text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.receipt .r-head .r-brand { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: 0.04em; }
+.receipt .r-head .r-sub { font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.receipt hr { border: 0; border-top: 1.5px dashed var(--muted); margin: 0; opacity: 0.6; }
+.r-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.r-list li { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.r-line { display: flex; align-items: baseline; gap: 8px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.02em; }
+.r-line .dots { flex: 1; border-bottom: 1.5px dotted var(--muted); transform: translateY(-4px); opacity: 0.7; min-width: 16px; }
+.r-line .tick { color: var(--wood); font-weight: 500; }
+.r-list .r-desc { color: var(--muted); font-size: 13px; }
+.r-total { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.03em; }
+.r-total .val { color: var(--wood); }
+.r-thanks { text-align: center; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+/* Perché */
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.why > div { display: flex; flex-direction: column; gap: 10px; border-top: 2px solid var(--fg); padding-top: 18px; min-width: 0; }
+.why h3 { font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
+.why p { color: var(--muted); }
+
+/* Check-up */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; counter-reset: step; }
+.steps li { display: flex; flex-direction: column; gap: 10px; background: var(--surface); border-radius: 14px; padding: 26px 24px 28px; min-width: 0; }
+.steps .num {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; color: var(--wood);
+}
+.steps h3 { font-weight: 600; font-size: 22px; letter-spacing: -0.01em; line-height: 1.15; }
+.steps p { color: var(--muted); font-size: 16px; }
+
+/* Pacchetti */
+.packs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.pack { display: flex; flex-direction: column; gap: 10px; border: 1.5px solid var(--line); border-radius: 14px; padding: 24px 22px 26px; min-width: 0; }
+.pack .eyebrow { color: var(--wood); }
+.pack h3 { font-weight: 600; font-size: 24px; letter-spacing: -0.015em; line-height: 1.1; }
+.pack p { color: var(--muted); font-size: 15.5px; }
+.pack.first { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+.pack.first p { color: var(--bg); opacity: 0.78; }
+.pack.first .eyebrow { color: var(--band-wood); }
+.packs-note { margin-top: 28px; color: var(--muted); max-width: 62ch; }
+
+/* Contatti */
+.contact { background: var(--band); color: var(--band-fg); padding-block: 88px; }
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.contact h2 { font-weight: 600; font-size: clamp(34px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.025em; }
+.contact .offer { font-family: var(--font-display); font-weight: 300; font-size: clamp(26px, 3.2vw, 38px); color: var(--band-wood); margin-top: 10px; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.contact-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-block: 16px; border-bottom: 1px solid rgba(245, 244, 240, 0.16); }
+.contact-list li:first-child { border-top: 1px solid rgba(245, 244, 240, 0.16); }
+.contact-list .k { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--band-muted); }
+.contact-list .v { font-size: 20px; font-weight: 400; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-width: 0; overflow-wrap: anywhere; }
+.contact-list .v a { text-decoration: none; }
+.contact-list .v a:hover { color: var(--band-wood); }
+.contact-list .todo { color: var(--band-muted); font-style: normal; }
+.copy {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  background: transparent; color: var(--band-fg); border: 1px solid rgba(245, 244, 240, 0.35);
+  border-radius: 999px; padding: 6px 12px; min-height: 32px; cursor: pointer;
+}
+.copy:hover { border-color: var(--band-wood); color: var(--band-wood); }
+
+.site-footer { padding-block: 28px; font-size: 14px; color: var(--muted); }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .split, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero-mark { order: -1; justify-content: flex-start; }
+  .hero-mark .lg-o { font-size: 150px; margin-left: 0.12em; }
+  .packs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .why, .steps { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .site-header .logo { font-size: 32px; }
+  .nav { gap: 6px 16px; font-size: 14px; }
+  .hero { padding-block: 24px 64px; }
+  .section, .contact { padding-block: 64px; }
+  .fuori-list, .packs { grid-template-columns: minmax(0, 1fr); }
+  .receipt { padding: 24px 18px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark .lg-o { transition: none; }
+  .hero-mark:hover .lg-o { transform: none; }
+}
+</style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="FiuTO, torna all'inizio">F<span class="lg-i" aria-hidden="true"><span class="stem"></span><span class="base"></span><span class="seat"></span></span><span class="u">u</span><span class="lg-t" aria-hidden="true"><span class="stem"></span><span class="plank"></span></span><span class="lg-o" aria-hidden="true"><span class="shadow"></span><span class="mat"></span><span class="ring"></span></span></a>
+    <nav class="nav" aria-label="Sezioni">
+      <a href="#fuori-dentro">Cosa facciamo</a>
+      <a href="#check-up">Check-up</a>
+      <a href="#pacchetti">Pacchetti</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Comunicazione e consulenza · Torino</p>
+        <h1>L'agenzia che non è un'agenzia.</h1>
+        <p class="claim">Qualità dell'agenzia, costo dei freelance.</p>
+        <p class="intro">FiuTO lavora con locali e attività commerciali di Torino. Ci occupiamo della comunicazione e di tutto il lavoro extra che ti toglie tempo. <strong>Tu pensi ai clienti, al resto pensiamo noi.</strong></p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/393669768852?text=Ciao%20FiuTO%2C%20prendiamo%20un%20caff%C3%A8%3F" target="_blank" rel="noopener">Prendiamo un caffè</a>
+          <a class="btn btn-ghost" href="#fuori-dentro">Cosa facciamo</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <span class="lg-o"><span class="shadow"></span><span class="mat"></span><span class="ring"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fuori-dentro">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Cosa facciamo</p>
+        <h2>Fuori e dentro il locale.</h2>
+        <p class="lead">Fuori dal locale facciamo in modo che i clienti ti trovino e ti scelgano. Dentro ti aiutiamo a far tornare i conti, ed è la parte che gli altri di solito non fanno.</p>
+      </div>
+      <div class="split">
+        <div>
+          <div class="col-title">
+            <p class="eyebrow">Fuori dal locale</p>
+            <h3>Comunicazione</h3>
+          </div>
+          <ul class="fuori-list">
+            <li><b>Siti e app</b><span>Sito, prenotazioni, menù e cataloghi online.</span></li>
+            <li><b>Social, foto e video</b><span>Piano editoriale, shooting e contenuti pronti.</span></li>
+            <li><b>Pubblicità e immagine</b><span>Logo, stampati, campagne su Instagram e Google.</span></li>
+            <li><b>Eventi e serate</b><span>Ideazione, organizzazione e lancio.</span></li>
+            <li><b>Recensioni e reputazione</b><span>Risposte curate e più recensioni, solo vere.</span></li>
+            <li><b>Delivery e piattaforme</b><span>Glovo, Deliveroo, Just Eat, TheFork.</span></li>
+            <li><b>Fidelizzazione</b><span>Newsletter, WhatsApp, carte fedeltà.</span></li>
+            <li><b>Stampa e creator locali</b><span>Food blogger, influencer e giornali torinesi.</span></li>
+            <li><b>Collaborazioni</b><span>Brand, negozi del quartiere, artisti.</span></li>
+            <li><b>Merchandising</b><span>Magliette, shopper e gadget con il tuo marchio.</span></li>
+          </ul>
+        </div>
+
+        <div class="receipt-wrap">
+          <div class="receipt" role="group" aria-label="Dentro il locale: i servizi di consulenza">
+            <div class="r-head">
+              <span class="r-brand">FIUTO</span>
+              <span class="r-sub">Torino · Dentro il locale</span>
+            </div>
+            <hr>
+            <ul class="r-list">
+              <li><span class="r-line">Scontrino medio<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Cosa rende, cosa vende, come far spendere di più.</span></li>
+              <li><span class="r-line">Food e drink cost<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Quanto costa davvero ogni piatto e ogni drink.</span></li>
+              <li><span class="r-line">Acquisti e fornitori<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Prodotti giusti, offerte migliori, meno spesa.</span></li>
+              <li><span class="r-line">Magazzino e sprechi<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Ordini, scorte, meno prodotto buttato.</span></li>
+              <li><span class="r-line">Menù e carta vini<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Struttura, descrizioni, abbinamenti.</span></li>
+              <li><span class="r-line">Drink list<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Nuovi cocktail, prezzi giusti, carta chiara.</span></li>
+              <li><span class="r-line">Formazione<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Accoglienza e vendita al banco e al tavolo.</span></li>
+              <li><span class="r-line">Mystery client<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Una visita da cliente e un resoconto onesto.</span></li>
+              <li><span class="r-line">Problem solving<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Personale che manca, turni, organizzazione.</span></li>
+              <li><span class="r-line">Affiancamento<span class="dots"></span><span class="tick">✓</span></span><span class="r-desc">Qualche settimana nel locale, accanto a te.</span></li>
+            </ul>
+            <hr>
+            <div class="r-total"><span>Totale</span><span class="val">Più margine</span></div>
+            <p class="r-thanks">Grazie e arrivederci</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="perche">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Perché FiuTO</p>
+        <h2>Perché non siamo un'agenzia.</h2>
+      </div>
+      <div class="why">
+        <div>
+          <h3>Snelli per scelta</h3>
+          <p>Struttura agile e nessun costo superfluo. Ogni euro che investi va nel lavoro, non nella sede.</p>
+        </div>
+        <div>
+          <h3>Un solo interlocutore</h3>
+          <p>Parli direttamente con chi fa il lavoro, dal sito alla serata, dagli acquisti al personale.</p>
+        </div>
+        <div>
+          <h3>Conosciamo il mestiere</h3>
+          <p>Anni nei locali e anni in agenzia. Un problema lo riconosciamo subito, e lo risolviamo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="check-up">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Come si comincia</p>
+        <h2>Il Check-up FiuTO.</h2>
+        <p class="lead">Il modo più semplice per conoscerci. Guardiamo il tuo locale da vicino e ti diciamo cosa fare, in ordine di priorità.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="num">Passo 1</span>
+          <h3>Un caffè insieme</h3>
+          <p>Ci racconti il locale, i clienti e cosa non ti torna. Offriamo noi.</p>
+        </li>
+        <li>
+          <span class="num">Passo 2</span>
+          <h3>Mezza giornata nel locale</h3>
+          <p>Guardiamo tutto, fuori e dentro: vetrina, Google e social, banco, carta, acquisti e scontrini.</p>
+        </li>
+        <li>
+          <span class="num">Passo 3</span>
+          <h3>Cinque azioni in una settimana</h3>
+          <p>Ti consegniamo cinque azioni concrete, con priorità, tempi e costi. Puoi farle da solo o con noi.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="pacchetti">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pacchetti</p>
+        <h2>Si parte dal check&#8209;up, poi scegli tu.</h2>
+      </div>
+      <div class="packs">
+        <div class="pack first">
+          <p class="eyebrow">Per iniziare</p>
+          <h3>Check-up FiuTO</h3>
+          <p>Mezza giornata nel locale e, in una settimana, cinque azioni concrete.</p>
+        </div>
+        <div class="pack">
+          <p class="eyebrow">Dentro il locale</p>
+          <h3>Margine</h3>
+          <p>Costi di piatti e drink, scontrino medio, acquisti e fornitori.</p>
+        </div>
+        <div class="pack">
+          <p class="eyebrow">Fuori dal locale</p>
+          <h3>Vetrina</h3>
+          <p>Sito, Google e Maps, recensioni, social con shooting e prima campagna.</p>
+        </div>
+        <div class="pack">
+          <p class="eyebrow">Ogni mese</p>
+          <h3>FiuTO Fisso</h3>
+          <p>Contenuti, recensioni, consulenza su WhatsApp e report mensile.</p>
+        </div>
+      </div>
+      <p class="packs-note">Ogni servizio si può prendere anche da solo. Il preventivo lo facciamo su misura, davanti a un caffè.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contatti">
+    <div class="wrap">
+      <div>
+        <h2>Parliamone davanti a un caffè.</h2>
+        <p class="offer">Offriamo noi.</p>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <span class="k">Email</span>
+          <span class="v"><a href="mailto:info@fiutolab.it" id="email-addr">info@fiutolab.it</a><button class="copy" type="button" id="copy-email" data-copy="info@fiutolab.it">Copia</button></span>
+        </li>
+        <li>
+          <span class="k">WhatsApp</span>
+          <span class="v"><a href="https://wa.me/393669768852?text=Ciao%20FiuTO%2C%20prendiamo%20un%20caff%C3%A8%3F" target="_blank" rel="noopener">366 976 8852</a></span>
+        </li>
+        <li>
+          <span class="k">Dove</span>
+          <span class="v">Torino</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>FiuTO · Comunicazione e consulenza per locali e negozi · Torino</span>
+    <span>P.IVA 02206240380 · fiutolab.it</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-copy');
+    var done = function () {
+      btn.textContent = 'Copiato';
+      setTimeout(function () { btn.textContent = 'Copia'; }, 1800);
+    };
+    var fallback = function () {
+      var el = document.getElementById('email-addr');
+      var range = document.createRange();
+      range.selectNodeContents(el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Selezionato';
+      setTimeout(function () { btn.textContent = 'Copia'; }, 1800);
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
