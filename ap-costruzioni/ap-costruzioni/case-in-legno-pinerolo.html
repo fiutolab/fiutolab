@@ -1,0 +1,279 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Case in legno a Pinerolo · AP Costruzioni</title><meta name="claude:viewport-fit-sides" content="cover"><meta name="description" content="Case in legno prefabbricate a Pinerolo, in Val Chisone, Val Pellice e in tutto il Pinerolese. Progetto, permessi e montaggio con un solo referente."><meta name="robots" content="noindex, nofollow"><style>@font-face{font-family:"Archivo";src:url("fonts/archivo-var.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-400.woff") format("woff");font-weight:400;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-500.woff") format("woff");font-weight:500;font-display:swap}</style><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}/* Layout: una tavola di progetto. Fasce verde menta del marchio, sezioni su carta, disegni tecnici che diventano rendering, e in fondo il cartiglio con i dati dell'azienda. */
+:root {
+  --paper: #F6F8F6;
+  --surface: #E9F1EB;
+  --leaf: #DAF3E0;
+  --brand: #95E4A4;
+  --leaf-strong: #2B7443;
+  --ink: #1D2521;
+  --muted: #55615A;
+  --line: #CDDBD1;
+  --timber: #A8754C;
+  --roof: #2E3338;
+  --glass: #DCE8E7;
+  --on-strong: #FFFFFF;
+  --night: #0E1626;
+  --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'DM Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+  --hdr-h: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #101512; --surface: #17201A; --leaf: #18301F; --brand: #95E4A4; --leaf-strong: #95E4A4;
+    --ink: #E4ECE6; --muted: #9DAEA3; --line: #29372D; --timber: #B9855A; --roof: #46505A; --glass: #27363A; --on-strong: #0F1A12; --night: #070B13;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #101512; --surface: #17201A; --leaf: #18301F; --brand: #95E4A4; --leaf-strong: #95E4A4;
+  --ink: #E4ECE6; --muted: #9DAEA3; --line: #29372D; --timber: #B9855A; --roof: #46505A; --glass: #27363A; --on-strong: #0F1A12; --night: #070B13;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; letter-spacing: -0.015em; }
+a { color: inherit; }
+img, video { max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--leaf-strong); outline-offset: 3px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.label { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+section[id] { scroll-margin-top: calc(var(--hdr-h) + 12px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Avviso demo */
+.draft { background: var(--ink); color: var(--paper); }
+.draft .wrap { padding-block: 7px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; display: flex; flex-wrap: wrap; gap: 2px 14px; justify-content: space-between; }
+.draft b { font-weight: 500; }
+
+/* Testata */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--paper) 93%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding-block: 10px; }
+.brand-logo { display: block; width: 150px; flex: none; color: var(--ink); text-decoration: none; }
+.brand-logo svg { display: block; width: 100%; height: auto; }
+.nav { display: flex; align-items: center; gap: 4px 20px; font-size: 15px; }
+.nav a { text-decoration: none; color: var(--muted); white-space: nowrap; padding-block: 6px; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--brand); }
+.nav .cta { color: var(--on-strong); background: var(--leaf-strong); padding: 8px 16px; border-radius: 4px; border: 0; font-weight: 600; }
+.nav .cta:hover, .nav .cta[aria-current="page"] { color: var(--on-strong); filter: brightness(1.08); }
+.util { display: flex; gap: 14px; font-family: var(--mono); font-size: 12px; }
+.util a { text-decoration: none; color: var(--muted); }
+.util a:hover, .util a[aria-current="page"] { color: var(--ink); }
+.menu-btn { display: none; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 4px; font: inherit; font-size: 14px; font-weight: 600; padding: 7px 12px; cursor: pointer; }
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+@media (max-width: 1080px) {
+  .menu-btn { display: inline-block; }
+  .right { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px max(16px, env(safe-area-inset-right, 0px)) 18px max(16px, env(safe-area-inset-left, 0px)); align-items: stretch; gap: 10px; max-height: calc(100vh - var(--hdr-h)); overflow-y: auto; }
+  .top.open .right { display: flex; }
+  .nav { flex-direction: column; align-items: stretch; gap: 0; font-size: 18px; }
+  .nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .nav a[aria-current="page"] { border-bottom-color: var(--line); color: var(--leaf-strong); }
+  .nav .cta { margin-top: 12px; text-align: center; border-bottom: 0; }
+  .util { font-size: 13px; padding-top: 4px; }
+}
+
+/* Bottoni */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 4px; font-family: var(--display); font-weight: 600; font-size: 16px; text-decoration: none; border: 1.5px solid var(--ink); cursor: pointer; background: transparent; color: var(--ink); }
+.btn-strong { background: var(--leaf-strong); border-color: var(--leaf-strong); color: var(--on-strong); }
+.btn-strong:hover { filter: brightness(1.08); }
+.btn:not(.btn-strong):hover { background: var(--ink); color: var(--paper); }
+.btn-sm { min-height: 38px; padding: 0 14px; font-size: 14.5px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Etichette */
+.tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; padding: 4px 6px 3px; border-radius: 3px; border: 1px solid currentColor; vertical-align: 0.15em; white-space: nowrap; }
+.tag-demo { color: var(--timber); }
+.tag-todo { color: var(--muted); }
+
+/* Sezioni */
+.sec { padding-block: 80px; }
+.sec-alt { background: var(--surface); }
+.sec-leaf { background: var(--leaf); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 48px; align-items: end; margin-bottom: 36px; }
+.sec-head .label { grid-column: 1 / -1; }
+.sec-head h2, .h2 { font-weight: 800; font-size: clamp(30px, 3.8vw, 48px); line-height: 1.02; font-variation-settings: 'wdth' 115; letter-spacing: -0.025em; }
+.sec-head p { color: var(--muted); max-width: 54ch; }
+.page-head { padding-block: 64px 40px; }
+.page-head .wrap { display: flex; flex-direction: column; gap: 16px; }
+.page-head h1 { font-weight: 800; font-size: clamp(40px, 6vw, 76px); line-height: 0.98; font-variation-settings: 'wdth' 118; letter-spacing: -0.03em; max-width: 18ch; }
+.page-head p.lede { font-size: 19px; color: var(--muted); max-width: 60ch; }
+.note { font-size: 14px; color: var(--muted); }
+.ph-box { border: 1.5px dashed var(--line); display: grid; place-items: center; text-align: center; color: var(--muted); font-family: var(--mono); font-size: 12.5px; padding: 18px; }
+.dl { display: grid; grid-template-columns: auto minmax(0, 1fr); margin: 0; border-top: 1px solid var(--line); }
+.dl dt, .dl dd { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.dl dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-right: 18px; padding-top: 11px; }
+.dl dd { font-weight: 500; }
+.todo { color: var(--muted); font-weight: 400; font-style: italic; }
+
+/* Invito finale */
+.cta-band { background: var(--leaf); }
+.cta-band .wrap { padding-block: 64px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 40px; }
+.cta-band h2 { font-weight: 800; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.04; font-variation-settings: 'wdth' 115; max-width: 20ch; }
+
+/* Cartiglio */
+footer { padding-block: 48px 56px; border-top: 1px solid var(--line); }
+.foot-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-bottom: 36px; }
+.foot-nav h4 { font-family: var(--mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 8px; }
+.foot-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.foot-nav a { text-decoration: none; }
+.foot-nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.foot-logo { width: 190px; color: var(--ink); }
+.foot-logo svg { width: 100%; height: auto; display: block; }
+.cartiglio { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; border: 1.5px solid var(--ink); }
+.cartiglio > div { padding: 12px 14px; border-right: 1px solid var(--ink); display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cartiglio > div:last-child { border-right: 0; }
+.cartiglio .label { font-size: 10.5px; }
+.cartiglio b { font-weight: 600; font-size: 15px; }
+.cartiglio span { font-size: 14px; color: var(--muted); }
+.credits { margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; font-size: 13.5px; color: var(--muted); }
+
+/* Disegno della casa */
+svg.house * { vector-effect: non-scaling-stroke; }
+.house .h-ground { stroke: var(--ink); stroke-width: 2; fill: none; }
+.house--line .h-slab { fill: color-mix(in srgb, var(--muted) 28%, var(--paper)); stroke: var(--ink); stroke-width: 1.4; }
+.house--line .h-panel { fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.house--line .h-roof, .house--line .h-fascia { fill: var(--roof); stroke: var(--ink); stroke-width: 1.4; }
+.house--line .h-frame, .house--line .h-door { fill: var(--roof); stroke: var(--ink); stroke-width: 1.2; }
+.house--line .h-glass { fill: var(--glass); }
+.house--line .h-wood { fill: var(--timber); stroke: var(--ink); stroke-width: 1.4; }
+.house--line .h-clad { stroke: var(--ink); stroke-width: 1; opacity: 0.3; fill: none; }
+.house--line .h-plinth { fill: color-mix(in srgb, var(--muted) 35%, var(--paper)); stroke: var(--ink); stroke-width: 1.4; }
+.house--line .h-skylight { fill: var(--glass); stroke: var(--ink); stroke-width: 1; }
+.house--line .h-step { fill: var(--surface); stroke: var(--ink); stroke-width: 1.2; }
+.house--line .h-lamp { fill: var(--ink); }
+.house--line .h-handle { stroke: var(--paper); stroke-width: 2; }
+.house .h-glow, .house .h-lampglow, .house .h-tint, .house .h-stars { opacity: 0; pointer-events: none; }
+.house--color { --c-wall: #ECE2CF; --c-roof: #2F3338; --c-wood: #7B4A2D; --c-frame: #1F2123; }
+.house--color .h-panel { fill: var(--c-wall); stroke: var(--c-wall); stroke-width: 1; transition: fill 0.4s ease, stroke 0.4s ease; }
+.house--color .h-slab { fill: #B9B4AA; }
+.house--color .h-roof { fill: var(--c-roof); transition: fill 0.4s ease; }
+.house--color .h-fascia { fill: color-mix(in srgb, var(--c-roof) 80%, #000); transition: fill 0.4s ease; }
+.house--color .h-frame, .house--color .h-door { fill: var(--c-frame); transition: fill 0.4s ease; }
+.house--color .h-glass { fill: #9DB4C0; }
+.house--color .h-wood { fill: var(--c-wood); transition: fill 0.4s ease; }
+.house--color .h-clad { stroke: #000; stroke-opacity: 0.22; stroke-width: 1.2; fill: none; }
+.house--color .h-plinth { fill: color-mix(in srgb, var(--c-wall) 55%, #6E6E6A); transition: fill 0.4s ease; }
+.house--color .h-skylight { fill: #C9D9E2; stroke: #222; stroke-width: 0.8; }
+.house--color .h-step { fill: #D8D3CA; stroke: #B5AFA4; stroke-width: 1; }
+.house--color .h-lamp { fill: #222; }
+.house--color .h-handle { stroke: #C9C9C9; stroke-width: 2; }
+.house--color .h-path { fill: #CFC9BE; }
+.house--color .h-tint { fill: #0B1426; transition: opacity 0.9s ease; }
+.house--color .h-stars circle { fill: #FFFFFF; }
+.house--color .h-stars { transition: opacity 0.9s ease; }
+.house--color .h-glow { fill: #FFC977; transition: opacity 0.9s ease; }
+.house--color .h-lampglow { fill: #FFD58A; transition: opacity 0.9s ease; }
+.house--color.is-night .h-tint { opacity: 0.62; }
+.house--color.is-night .h-glow, .house--color.is-night .h-lampglow, .house--color.is-night .h-stars { opacity: 1; }
+
+/* Telefono e tablet */
+@media (max-width: 960px) {
+  .sec-head { grid-template-columns: minmax(0, 1fr); }
+  .foot-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cartiglio { grid-template-columns: 1fr 1fr; }
+  .cartiglio > div:nth-child(2) { border-right: 0; }
+  .cartiglio > div:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
+}
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .sec { padding-block: 56px; }
+  .page-head { padding-block: 44px 28px; }
+  .cartiglio { grid-template-columns: minmax(0, 1fr); }
+  .cartiglio > div { border-right: 0; border-bottom: 1px solid var(--ink); }
+  .cartiglio > div:last-child { border-bottom: 0; }
+  .brand-logo { width: 128px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+.crumbs { font-family: var(--mono); font-size: 12.5px; color: var(--ink); display: flex; flex-wrap: wrap; gap: 6px; }
+.crumbs a { color: var(--ink); }
+.seo-note { background: var(--surface); border-left: 4px solid var(--timber); padding: 14px 18px; font-size: 15px; color: var(--muted); }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 56px; align-items: start; }
+.prose { display: flex; flex-direction: column; gap: 14px; max-width: 62ch; }
+.prose h2 { font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.05; font-variation-settings: 'wdth' 114; }
+.prose p { color: var(--muted); }
+.near { border: 1.5px solid var(--ink); background: var(--paper); }
+.near img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.near div { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.near h3 { font-size: 21px; font-weight: 700; font-variation-settings: 'wdth' 110; }
+.qa { border-top: 2px solid var(--ink); }
+.qa div { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.qa h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.qa p { color: var(--muted); }
+@media (max-width: 960px) { .two { grid-template-columns: minmax(0, 1fr); } }
+</style></head><body><div class="draft"><div class="wrap"><span><b>Demo</b> · testi, dati e immagini in parte di esempio</span><span>Proposta di FiuTO</span></div></div><header class="top"><div class="wrap"><a class="brand-logo" href="index.html" aria-label="AP Costruzioni, vai alla home"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AP Costruzioni" viewBox="41.8 166.4 782.8 241.8"><g transform="translate(0 595.32) rotate(-90)"><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 425.875 280.558594 L 387.515625 304.054688 L 387.515625 250.59375 Z M 425.875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 425.875 280.558594 L 425.875 304.054688 L 387.515625 304.054688 Z M 425.875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 280.558594 L 225.460938 304.054688 L 225.460938 280.558594 Z M 387.515625 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 280.558594 L 387.515625 304.054688 L 225.460938 304.054688 Z M 387.515625 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 250.59375 L 225.460938 154.464844 L 225.460938 124.617188 Z M 387.515625 250.59375 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 250.59375 L 387.515625 280.558594 L 225.460938 154.464844 Z M 387.515625 250.59375 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 124.617188 L 213.714844 145.355469 L 213.714844 115.507812 Z M 225.460938 124.617188 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 124.617188 L 225.460938 154.464844 L 213.714844 145.355469 Z M 225.460938 124.617188 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 280.558594 L 201.96875 292.308594 L 201.96875 280.558594 Z M 225.460938 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 280.558594 L 225.460938 292.308594 L 201.96875 292.308594 Z M 225.460938 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 201.96875 280.558594 L 190.101562 304.054688 L 190.101562 280.558594 Z M 201.96875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 201.96875 280.558594 L 201.96875 304.054688 L 190.101562 304.054688 Z M 201.96875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 213.714844 44.789062 L 190.101562 127.015625 L 190.101562 44.789062 Z M 213.714844 44.789062 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 213.714844 44.789062 L 213.714844 145.355469 L 190.101562 127.015625 Z M 213.714844 44.789062 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M -0.0017264 -0.000835336 L -0.0017264 109.75981 M 31.518611 -0.000835336 L 31.518611 94.398534 M 31.518611 424.80154 L 31.518611 1036.958297 M -0.0017264 582.559655 L -0.0017264 1036.958297 M 314.721932 346.081518 L 47.197958 346.081518 M 15.839264 346.081518 L -0.0017264 346.081518 M 263.517679 377.601855 L -0.0017264 377.601855 M 47.197958 361.922508 L 15.839264 361.922508 M 147.520752 393.281202 L -0.0017264 393.281202 M 116.000415 424.80154 L 31.518611 424.80154 M 263.517679 314.717609 L -0.0017264 314.717609 M 47.197958 330.402171 L 15.839264 330.402171 " transform="matrix(0.749144, 0, 0, 0.749144, 190.102856, 44.789688)"/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 300.617188 227.820312 L 277.003906 268.695312 L 277.003906 209.480469 Z M 300.617188 227.820312 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 300.617188 227.820312 L 300.617188 268.695312 L 277.003906 268.695312 Z M 300.617188 227.820312 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M 0.000748028 0.00184739 L -31.519589 0.00184739 M 167.201928 15.837623 L -116.001393 -204.481452 M 115.997675 15.837623 L -147.52173 -189.120176 M 0.000748028 -54.560404 L -31.519589 -79.04146 M 167.201928 78.721869 L -31.519589 233.278415 M 115.997675 78.721869 L 0.000748028 168.960241 M -147.52173 283.679669 L -147.52173 94.401216 M 0.000748028 94.401216 L 0.000748028 168.960241 M -31.519589 125.921554 L -31.519589 233.278415 M 0.000748028 0.00184739 L 0.000748028 -54.560404 M -31.519589 0.00184739 L -31.519589 -79.04146 M -147.52173 78.721869 L -147.52173 15.837623 M -131.68074 63.042522 L -131.68074 31.522185 M -100.322046 63.042522 L -100.322046 31.522185 M -116.001393 -298.880821 L -147.52173 -298.880821 " transform="matrix(0.749144, 0, 0, 0.749144, 300.616627, 268.693929)"/><path fill-rule="nonzero" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 240.226562 409.53125 L 238.667969 415.765625 C 233.597656 414.476562 229.734375 412.148438 227.066406 408.785156 C 224.398438 405.429688 223.074219 401.316406 223.066406 396.453125 C 223.074219 391.433594 224.089844 387.34375 226.144531 384.195312 C 228.195312 381.050781 231.164062 378.652344 235.042969 377.003906 C 238.933594 375.355469 243.105469 374.53125 247.5625 374.53125 C 252.433594 374.53125 256.671875 375.460938 260.296875 377.320312 C 263.921875 379.179688 266.671875 381.816406 268.554688 385.230469 C 270.433594 388.65625 271.371094 392.421875 271.371094 396.527344 C 271.371094 401.1875 270.1875 405.113281 267.804688 408.289062 C 265.421875 411.464844 262.082031 413.683594 257.773438 414.925781 L 256.335938 408.8125 C 259.734375 407.734375 262.214844 406.167969 263.765625 404.117188 C 265.324219 402.0625 266.097656 399.488281 266.097656 396.378906 C 266.097656 392.804688 265.234375 389.816406 263.511719 387.410156 C 261.789062 385.011719 259.480469 383.320312 256.574219 382.347656 C 253.675781 381.371094 250.6875 380.886719 247.601562 380.886719 C 243.628906 380.886719 240.152344 381.460938 237.1875 382.617188 C 234.21875 383.769531 232.011719 385.566406 230.542969 388.003906 C 229.074219 390.445312 228.339844 393.082031 228.339844 395.914062 C 228.339844 399.367188 229.34375 402.289062 231.335938 404.679688 C 233.335938 407.074219 236.300781 408.695312 240.226562 409.53125 Z M 246.597656 421.398438 C 254.34375 421.398438 260.410156 423.488281 264.792969 427.667969 C 269.183594 431.851562 271.371094 437.242188 271.371094 443.851562 C 271.371094 448.179688 270.34375 452.078125 268.285156 455.554688 C 266.222656 459.027344 263.355469 461.679688 259.667969 463.5 C 255.984375 465.320312 251.808594 466.226562 247.136719 466.226562 C 242.402344 466.226562 238.167969 465.269531 234.429688 463.351562 C 230.699219 461.433594 227.867188 458.722656 225.949219 455.199219 C 224.03125 451.6875 223.074219 447.890625 223.066406 443.8125 C 223.074219 439.410156 224.128906 435.460938 226.25 431.984375 C 228.375 428.507812 231.269531 425.878906 234.9375 424.089844 C 238.609375 422.296875 242.496094 421.398438 246.597656 421.398438 Z M 246.511719 427.753906 C 240.878906 427.753906 236.445312 429.28125 233.199219 432.320312 C 229.964844 435.371094 228.339844 439.191406 228.339844 443.785156 C 228.339844 448.464844 229.980469 452.316406 233.253906 455.34375 C 236.527344 458.371094 241.171875 459.875 247.179688 459.875 C 250.984375 459.875 254.3125 459.230469 257.152344 457.941406 C 259.992188 456.652344 262.191406 454.757812 263.75 452.265625 C 265.316406 449.777344 266.097656 446.984375 266.097656 443.882812 C 266.097656 439.476562 264.597656 435.691406 261.585938 432.515625 C 258.574219 429.339844 253.554688 427.753906 246.511719 427.753906 Z M 238.886719 472.101562 L 239.367188 477.976562 C 237.027344 478.253906 235.105469 478.890625 233.605469 479.894531 C 232.105469 480.898438 230.894531 482.445312 229.964844 484.550781 C 229.042969 486.65625 228.578125 489.023438 228.578125 491.652344 C 228.578125 493.992188 228.929688 496.058594 229.636719 497.84375 C 230.339844 499.632812 231.296875 500.964844 232.519531 501.835938 C 233.746094 502.710938 235.074219 503.144531 236.511719 503.144531 C 237.980469 503.144531 239.253906 502.734375 240.347656 501.902344 C 241.441406 501.078125 242.355469 499.691406 243.089844 497.753906 C 243.585938 496.507812 244.339844 493.757812 245.367188 489.503906 C 246.402344 485.25 247.375 482.261719 248.289062 480.535156 C 249.457031 478.304688 250.910156 476.640625 252.648438 475.546875 C 254.386719 474.453125 256.328125 473.898438 258.46875 473.898438 C 260.835938 473.898438 263.039062 474.566406 265.09375 475.898438 C 267.144531 477.234375 268.710938 479.171875 269.773438 481.726562 C 270.839844 484.289062 271.371094 487.128906 271.371094 490.246094 C 271.371094 493.691406 270.816406 496.734375 269.707031 499.363281 C 268.597656 501.992188 266.957031 504.015625 264.800781 505.421875 C 262.640625 506.839844 260.191406 507.597656 257.464844 507.699219 L 256.988281 501.828125 C 259.90625 501.511719 262.117188 500.449219 263.617188 498.621094 C 265.113281 496.800781 265.855469 494.113281 265.855469 490.546875 C 265.855469 486.84375 265.175781 484.140625 263.804688 482.441406 C 262.433594 480.746094 260.785156 479.894531 258.851562 479.894531 C 257.171875 479.894531 255.796875 480.5 254.710938 481.699219 C 253.628906 482.882812 252.527344 485.960938 251.390625 490.941406 C 250.25 495.933594 249.261719 499.347656 248.410156 501.207031 C 247.164062 503.917969 245.578125 505.917969 243.660156 507.207031 C 241.742188 508.496094 239.523438 509.140625 237.023438 509.140625 C 234.550781 509.140625 232.210938 508.433594 230.015625 507.019531 C 227.820312 505.601562 226.113281 503.566406 224.894531 500.90625 C 223.679688 498.253906 223.074219 495.265625 223.066406 491.9375 C 223.074219 487.730469 223.6875 484.207031 224.914062 481.359375 C 226.152344 478.515625 228.007812 476.28125 230.480469 474.664062 C 232.960938 473.046875 235.761719 472.191406 238.886719 472.101562 Z M 223.785156 529.515625 L 265.015625 529.515625 L 265.015625 514.171875 L 270.53125 514.171875 L 270.53125 551.089844 L 265.015625 551.089844 L 265.015625 535.75 L 223.785156 535.75 Z M 223.785156 557.683594 L 270.53125 557.683594 L 270.53125 578.335938 C 270.53125 582.472656 270.113281 585.613281 269.273438 587.761719 C 268.433594 589.910156 266.941406 591.628906 264.816406 592.917969 C 262.6875 594.203125 260.328125 594.839844 257.742188 594.839844 C 254.425781 594.839844 251.621094 593.777344 249.34375 591.648438 C 247.066406 589.523438 245.613281 586.234375 245 581.785156 C 244.222656 583.417969 243.449219 584.660156 242.683594 585.5 C 241.039062 587.304688 238.96875 589.003906 236.476562 590.59375 L 223.785156 598.625 L 223.785156 590.921875 L 233.484375 584.789062 C 236.289062 582.996094 238.421875 581.523438 239.90625 580.359375 C 241.390625 579.207031 242.4375 578.164062 243.039062 577.25 C 243.636719 576.335938 244.054688 575.402344 244.296875 574.449219 C 244.445312 573.761719 244.519531 572.621094 244.519531 571.035156 L 244.519531 563.917969 L 223.785156 563.917969 Z M 250.035156 563.917969 L 250.035156 577.101562 C 250.035156 579.910156 250.328125 582.097656 250.902344 583.671875 C 251.488281 585.246094 252.417969 586.445312 253.691406 587.261719 C 254.964844 588.085938 256.351562 588.488281 257.847656 588.488281 C 260.042969 588.488281 261.847656 587.703125 263.257812 586.113281 C 264.671875 584.527344 265.375 582.023438 265.375 578.59375 L 265.375 563.917969 Z M 270.53125 635.117188 L 270.53125 641.347656 L 243.5625 641.347656 C 238.871094 641.347656 235.148438 640.824219 232.390625 639.765625 C 229.636719 638.710938 227.386719 636.800781 225.65625 634.042969 C 223.933594 631.289062 223.074219 627.660156 223.066406 623.179688 C 223.074219 618.828125 223.820312 615.269531 225.328125 612.5 C 226.832031 609.726562 229.011719 607.75 231.867188 606.566406 C 234.722656 605.382812 238.617188 604.789062 243.5625 604.789062 L 270.53125 604.789062 L 270.53125 611.023438 L 243.710938 611.023438 C 239.679688 611.023438 236.707031 611.398438 234.789062 612.148438 C 232.878906 612.894531 231.402344 614.175781 230.371094 615.988281 C 229.335938 617.800781 228.820312 620.027344 228.820312 622.648438 C 228.820312 627.144531 229.84375 630.34375 231.890625 632.253906 C 233.941406 634.164062 237.882812 635.117188 243.710938 635.117188 Z M 223.785156 647.699219 L 229.515625 647.699219 L 259.398438 671.742188 C 261.503906 673.457031 263.375 675.082031 265.015625 676.625 L 265.015625 650.457031 L 270.53125 650.457031 L 270.53125 683.898438 L 265.015625 683.898438 L 232.632812 657.671875 L 229.296875 654.804688 L 229.296875 684.617188 L 223.785156 684.617188 Z M 223.785156 692.53125 L 270.53125 692.53125 L 270.53125 698.761719 L 223.785156 698.761719 Z M 246.597656 707.511719 C 254.34375 707.511719 260.410156 709.601562 264.792969 713.78125 C 269.183594 717.964844 271.371094 723.355469 271.371094 729.964844 C 271.371094 734.292969 270.34375 738.191406 268.285156 741.667969 C 266.222656 745.140625 263.355469 747.792969 259.667969 749.613281 C 255.984375 751.433594 251.808594 752.339844 247.136719 752.339844 C 242.402344 752.339844 238.167969 751.382812 234.429688 749.464844 C 230.699219 747.546875 227.867188 744.835938 225.949219 741.3125 C 224.03125 737.800781 223.074219 734.003906 223.066406 729.925781 C 223.074219 725.523438 224.128906 721.574219 226.25 718.097656 C 228.375 714.621094 231.269531 711.992188 234.9375 710.203125 C 238.609375 708.410156 242.496094 707.511719 246.597656 707.511719 Z M 246.511719 713.867188 C 240.878906 713.867188 236.445312 715.394531 233.199219 718.433594 C 229.964844 721.484375 228.339844 725.304688 228.339844 729.898438 C 228.339844 734.578125 229.980469 738.429688 233.253906 741.457031 C 236.527344 744.484375 241.171875 745.988281 247.179688 745.988281 C 250.984375 745.988281 254.3125 745.34375 257.152344 744.054688 C 259.992188 742.765625 262.191406 740.871094 263.75 738.378906 C 265.316406 735.890625 266.097656 733.097656 266.097656 729.996094 C 266.097656 725.589844 264.597656 721.804688 261.585938 718.628906 C 258.574219 715.453125 253.554688 713.867188 246.511719 713.867188 Z M 223.785156 760.253906 L 270.53125 760.253906 L 270.53125 766.546875 L 233.753906 791.296875 L 270.53125 791.296875 L 270.53125 797.171875 L 223.785156 797.171875 L 223.785156 790.886719 L 260.550781 766.125 L 223.785156 766.125 Z M 223.785156 808.4375 L 270.53125 808.4375 L 270.53125 814.671875 L 223.785156 814.671875 Z M 223.785156 808.4375 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M 568.481927 373.91761 L 568.481927 436.801856 M 285.278606 1096.158298 L 253.758269 1096.158298 " transform="matrix(0.749144, 0, 0, 0.749144, 0, 0.440345)"/></g></svg></a><button class="menu-btn" type="button" aria-expanded="false" data-open="Menu" data-close="Chiudi">Menu</button><div class="right"><nav class="nav" aria-label="Pagine"><a href="come-lavoriamo.html">Come lavoriamo</a><a href="progetti.html">Progetti</a><a href="immagina.html">Immagina la tua casa</a><a href="diario.html">Diario di cantiere</a><a href="chi-siamo.html">Chi siamo</a><a href="guide.html">Guide</a><a class="cta" href="contatti.html">Contatti</a></nav><div class="util"><a href="area-clienti.html">Area clienti</a><a href="progettisti.html">Progettisti</a><a href="index-en.html">EN</a></div></div></div></header><main id="top">
+  <div class="page-head sec-leaf">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Percorso"><a href="guide.html">Guide</a><span>›</span><a href="guide.html#zone">Zone</a><span>›</span><span>Pinerolo</span></nav>
+      <h1>Case in legno a Pinerolo e dintorni.</h1>
+      <p class="lede" style="color: var(--ink)">Progettiamo e costruiamo case in legno prefabbricate a Pinerolo, in Val Chisone, in Val Pellice e in tutto il Pinerolese. Un solo referente, dal sopralluogo alle chiavi.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+      <p class="seo-note"><b>Pagina di esempio.</b> Le pagine per zona servono a farsi trovare su Google da chi cerca "case in legno" più il nome del proprio comune. Ogni zona avrà la sua, con le case costruite lì.</p>
+      <div class="two">
+        <div class="prose">
+          <h2>Perché scegliere il legno nel Pinerolese</h2>
+          <p>Tra la pianura e le valli, gli inverni sono freddi e le estati calde. Una casa in legno ben isolata tiene il caldo dentro d'inverno e il fresco d'estate, con consumi bassi tutto l'anno.</p>
+          <p>Il cantiere dura poco: le pareti arrivano già pronte e la struttura si monta in pochi giorni. Meno mesi di lavori vuol dire meno disagi per te e per i vicini.</p>
+          <p>Siamo a meno di un'ora: possiamo seguire il cantiere ogni settimana ed esserci anche dopo la consegna.</p>
+        </div>
+        <a class="near" href="progetti.html" style="text-decoration: none; color: inherit">
+          <img src="img/render-1-720.webp" alt="Rendering di una casa AP Costruzioni" width="720" height="405">
+          <div><span class="label">Costruita in zona · esempio</span><h3>Casa nel frutteto</h3><span class="muted">160 m² · telaio in legno · montaggio in 6 giorni</span></div>
+        </a>
+      </div>
+      <div class="two">
+        <div class="prose">
+          <h2>Permessi a Pinerolo</h2>
+          <p>Per costruire una casa nuova serve un terreno edificabile e il permesso di costruire, che si chiede allo Sportello unico per l'edilizia del Comune. Prepariamo noi il progetto e seguiamo le pratiche fino al via ai lavori.</p>
+        </div>
+        <div class="qa">
+          <div><h3>Lavorate anche in valle?</h3><p>Sì, in Val Chisone, Val Pellice e Val Germanasca, anche dove l'accesso per i camion va studiato prima.</p></div>
+          <div><h3>Fate anche ampliamenti?</h3><p>Sì: una stanza in più o un piano in più sopra la casa che hai già.</p></div>
+          <div><h3>Posso vedere una casa finita in zona?</h3><p>Sì, su appuntamento, con i proprietari che ce lo permettono.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Hai un terreno nel Pinerolese?</h2>
+      <div class="actions"><a class="btn btn-strong" href="contatti.html#terreno">Raccontacelo</a><a class="btn" href="guide.html#zone">Altre zone</a></div>
+    </div>
+  </div>
+</main><footer><div class="wrap"><div class="foot-nav"><div><h4>Il sito</h4><ul><li><a href="index.html">Home</a></li><li><a href="come-lavoriamo.html">Come lavoriamo</a></li><li><a href="progetti.html">Progetti</a></li><li><a href="immagina.html">Immagina la tua casa</a></li></ul></div><div><h4>Per te</h4><ul><li><a href="diario.html">Diario di cantiere</a></li><li><a href="area-clienti.html">Area clienti</a></li><li><a href="progettisti.html">Progettisti</a></li><li><a href="chi-siamo.html#lavora">Lavora con noi</a></li></ul></div><div><h4>Per capire</h4><ul><li><a href="guide.html">Guide</a></li><li><a href="guide.html#guida">La guida gratuita</a></li><li><a href="case-in-legno-pinerolo.html">Case in legno a Pinerolo</a></li></ul></div><div><h4>Contatti</h4><ul><li><a href="contatti.html">Scrivici</a></li><li><a href="contatti.html#terreno">Il tuo terreno</a></li></ul></div></div><div class="cartiglio"><div><span class="label">Impresa</span><b>AP Costruzioni</b><span>Via Esempio 1, Torino</span></div><div><span class="label">P.IVA</span><b>00000000000</b><span>REA TO-000000</span></div><div><span class="label">Contatti</span><b>info@tuodominio.it</b><span>+39 011 000 0000</span></div><div><span class="label">Tavola</span><b>Sito web</b><span>Scala 1:1</span></div></div><div class="credits"><span>Privacy · Cookie</span><span>Sito di FiuTO · fiutolab.it</span></div></div></footer><script>(function () {
+  // Altezza della testata, usata dalle sezioni "appiccicose"
+  var top = document.querySelector('.top');
+  function setH() { if (top) document.documentElement.style.setProperty('--hdr-h', top.offsetHeight + 'px'); }
+  setH(); window.addEventListener('resize', setH);
+
+  // Menu da telefono
+  var btn = document.querySelector('.menu-btn');
+  if (btn && top) {
+    btn.addEventListener('click', function () {
+      var open = top.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? (btn.getAttribute('data-close') || 'Chiudi') : (btn.getAttribute('data-open') || 'Menu');
+    });
+  }
+
+  // Moduli della demo: non inviano nulla
+  document.querySelectorAll('form[data-demo]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      var m = f.querySelector('.sent'); if (m) m.hidden = false;
+    });
+  });
+})();
+</script></body></html>
