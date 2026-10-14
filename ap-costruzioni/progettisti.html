@@ -1,4 +1,4 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Per progettisti · AP Costruzioni</title><meta name="claude:viewport-fit-sides" content="cover"><meta name="description" content="Per architetti e ingegneri: supporto tecnico, stratigrafie, dettagli costruttivi e modelli da scaricare."><meta name="robots" content="noindex, nofollow"><style>@font-face{font-family:"Archivo";src:url("fonts/archivo-var.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-400.woff") format("woff");font-weight:400;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-500.woff") format("woff");font-weight:500;font-display:swap}</style><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}/* Layout: una tavola di progetto. Fasce verde menta del marchio, sezioni su carta, disegni tecnici che diventano rendering, e in fondo il cartiglio con i dati dell'azienda. */
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Per progettisti · AP Costruzioni</title><meta name="claude:viewport-fit-sides" content="cover"><meta name="description" content="Per architetti e ingegneri: supporto tecnico, stratigrafie, dettagli costruttivi e modelli da scaricare."><meta name="robots" content="noindex, nofollow"><style>@font-face{font-family:"Archivo";src:url("fonts/archivo-var.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-400.woff") format("woff");font-weight:400;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-500.woff") format("woff");font-weight:500;font-display:swap}</style><link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:site_name" content="AP Costruzioni"><meta property="og:locale" content="it_IT"><meta property="og:title" content="Per progettisti · AP Costruzioni"><meta property="og:description" content="Per architetti e ingegneri: supporto tecnico, stratigrafie, dettagli costruttivi e modelli da scaricare."><meta property="og:url" content="https://fiutolab.it/ap-costruzioni/progettisti.html"><meta property="og:image" content="https://fiutolab.it/ap-costruzioni/img/og-ap.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}/* Layout: una tavola di progetto. Fasce verde menta del marchio, sezioni su carta, disegni tecnici che diventano rendering, e in fondo il cartiglio con i dati dell'azienda. */
 :root {
   --paper: #F6F8F6;
   --surface: #E9F1EB;
@@ -50,6 +50,7 @@ section[id] { scroll-margin-top: calc(var(--hdr-h) + 12px); }
 .draft { background: var(--ink); color: var(--paper); }
 .draft .wrap { padding-block: 7px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; display: flex; flex-wrap: wrap; gap: 2px 14px; justify-content: space-between; }
 .draft b { font-weight: 500; }
+@media (max-width: 600px) { .draft .wrap { font-size: 11.5px; padding-block: 6px; } .draft .wrap > span:last-child { display: none; } }
 
 /* Testata */
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--paper) 93%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -172,6 +173,29 @@ svg.house * { vector-effect: non-scaling-stroke; }
 .house--color.is-night .h-tint { opacity: 0.62; }
 .house--color.is-night .h-glow, .house--color.is-night .h-lampglow, .house--color.is-night .h-stars { opacity: 1; }
 
+/* Barra contatti (telefono) */
+.mbar { display: none; }
+.mb-toast { position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 70; background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); padding: 10px 14px; font-size: 14px; max-width: calc(100vw - 32px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+@media (max-width: 760px) {
+  .mbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #1D2521; padding: 8px max(10px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-left, 0px)); border-top: 1px solid #2B3A2D; }
+  .mbar a { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #F6F8F6; border: 1.5px solid #46524B; }
+  .mbar a.wa { background: #95E4A4; border-color: #95E4A4; color: #1D2521; }
+  .mbar svg { width: 19px; height: 19px; flex: none; }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Testate con dettaglio */
+.page-head .wrap.ph-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: 24px 48px; align-items: end; }
+.ph-text { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.ph-img { margin: 0; width: 100%; max-width: 280px; justify-self: end; display: flex; flex-direction: column; gap: 6px; }
+.ph-img img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1.5px solid var(--ink); background: var(--surface); }
+.ph-img figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--ink); opacity: 0.75; }
+@media (max-width: 760px) {
+  .page-head .wrap.ph-grid { grid-template-columns: minmax(0, 1fr); }
+  .ph-img { max-width: none; justify-self: stretch; }
+  .ph-img img { aspect-ratio: 16 / 9; }
+}
+
 /* Telefono e tablet */
 @media (max-width: 960px) {
   .sec-head { grid-template-columns: minmax(0, 1fr); }
@@ -266,7 +290,7 @@ form.pf { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 
       </form>
     </div>
   </section>
-</main><footer><div class="wrap"><div class="foot-nav"><div><h4>Il sito</h4><ul><li><a href="index.html">Home</a></li><li><a href="come-lavoriamo.html">Come lavoriamo</a></li><li><a href="progetti.html">Progetti</a></li><li><a href="immagina.html">Immagina la tua casa</a></li></ul></div><div><h4>Per te</h4><ul><li><a href="diario.html">Diario di cantiere</a></li><li><a href="area-clienti.html">Area clienti</a></li><li><a href="progettisti.html">Progettisti</a></li><li><a href="chi-siamo.html#lavora">Lavora con noi</a></li></ul></div><div><h4>Per capire</h4><ul><li><a href="guide.html">Guide</a></li><li><a href="guide.html#guida">La guida gratuita</a></li><li><a href="case-in-legno-pinerolo.html">Case in legno a Pinerolo</a></li></ul></div><div><h4>Contatti</h4><ul><li><a href="contatti.html">Scrivici</a></li><li><a href="contatti.html#terreno">Il tuo terreno</a></li></ul></div></div><div class="cartiglio"><div><span class="label">Impresa</span><b>AP Costruzioni</b><span>Via Esempio 1, Torino</span></div><div><span class="label">P.IVA</span><b>00000000000</b><span>REA TO-000000</span></div><div><span class="label">Contatti</span><b>info@tuodominio.it</b><span>+39 011 000 0000</span></div><div><span class="label">Tavola</span><b>Sito web</b><span>Scala 1:1</span></div></div><div class="credits"><span>Privacy · Cookie</span><span>Sito di FiuTO · fiutolab.it</span></div></div></footer><script>(function () {
+</main><footer><div class="wrap"><div class="foot-nav"><div><h4>Il sito</h4><ul><li><a href="index.html">Home</a></li><li><a href="come-lavoriamo.html">Come lavoriamo</a></li><li><a href="progetti.html">Progetti</a></li><li><a href="immagina.html">Immagina la tua casa</a></li></ul></div><div><h4>Per te</h4><ul><li><a href="diario.html">Diario di cantiere</a></li><li><a href="area-clienti.html">Area clienti</a></li><li><a href="progettisti.html">Progettisti</a></li><li><a href="chi-siamo.html#lavora">Lavora con noi</a></li></ul></div><div><h4>Per capire</h4><ul><li><a href="guide.html">Guide</a></li><li><a href="guide.html#guida">La guida gratuita</a></li><li><a href="case-in-legno-pinerolo.html">Case in legno a Pinerolo</a></li></ul></div><div><h4>Contatti</h4><ul><li><a href="contatti.html">Scrivici</a></li><li><a href="contatti.html#terreno">Il tuo terreno</a></li></ul></div></div><div class="cartiglio"><div><span class="label">Impresa</span><b>AP Costruzioni</b><span>Via Esempio 1, Torino</span></div><div><span class="label">P.IVA</span><b>00000000000</b><span>REA TO-000000</span></div><div><span class="label">Contatti</span><b>info@tuodominio.it</b><span>+39 011 000 0000</span></div><div><span class="label">Tavola</span><b>Sito web</b><span>Scala 1:1</span></div></div><div class="credits"><span>Privacy · Cookie</span><span>Sito di FiuTO · fiutolab.it</span></div></div></footer><nav class="mbar" aria-label="Contatti rapidi"><a href="contatti.html" data-mb="Nel sito vero questo pulsante chiama AP."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.5 4.5-2.2 1.4a11 11 0 0 0 6.2 6.2l1.4-2.2 4.5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Chiama</a><a class="wa" href="contatti.html" data-mb="Nel sito vero questo pulsante apre WhatsApp con AP."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>WhatsApp</a><a href="contatti.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Scrivi</a></nav><div class="mb-toast" role="status" hidden></div><script>(function () {
   // Altezza della testata, usata dalle sezioni "appiccicose"
   var top = document.querySelector('.top');
   function setH() { if (top) document.documentElement.style.setProperty('--hdr-h', top.offsetHeight + 'px'); }
@@ -281,6 +305,18 @@ form.pf { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 
       btn.textContent = open ? (btn.getAttribute('data-close') || 'Chiudi') : (btn.getAttribute('data-open') || 'Menu');
     });
   }
+
+  // Barra contatti: nella demo spiega cosa farebbe il pulsante
+  var toast = document.querySelector('.mb-toast'), tt = null;
+  document.querySelectorAll('[data-mb]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!toast) return;
+      toast.textContent = a.getAttribute('data-mb');
+      toast.hidden = false;
+      clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 3200);
+    });
+  });
 
   // Moduli della demo: non inviano nulla
   document.querySelectorAll('form[data-demo]').forEach(function (f) {

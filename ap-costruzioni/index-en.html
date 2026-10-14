@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>AP Costruzioni · Timber homes</title><meta name="claude:viewport-fit-sides" content="cover"><meta name="description" content="Made-to-measure prefabricated timber homes in Piedmont, Italy: designed with you, built in our workshop, assembled in days."><meta name="robots" content="noindex, nofollow"><style>@font-face{font-family:"Archivo";src:url("fonts/archivo-var.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-400.woff") format("woff");font-weight:400;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-500.woff") format("woff");font-weight:500;font-display:swap}</style><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}/* Layout: una tavola di progetto. Fasce verde menta del marchio, sezioni su carta, disegni tecnici che diventano rendering, e in fondo il cartiglio con i dati dell'azienda. */
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>AP Costruzioni · Timber homes</title><meta name="claude:viewport-fit-sides" content="cover"><meta name="description" content="Made-to-measure prefabricated timber homes in Piedmont, Italy: designed with you, built in our workshop, assembled in days."><meta name="robots" content="noindex, nofollow"><style>@font-face{font-family:"Archivo";src:url("fonts/archivo-var.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-400.woff") format("woff");font-weight:400;font-display:swap}@font-face{font-family:"DM Mono";src:url("fonts/dmmono-500.woff") format("woff");font-weight:500;font-display:swap}</style><link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:site_name" content="AP Costruzioni"><meta property="og:locale" content="en_GB"><meta property="og:title" content="AP Costruzioni · Timber homes"><meta property="og:description" content="Made-to-measure prefabricated timber homes in Piedmont, Italy: designed with you, built in our workshop, assembled in days."><meta property="og:url" content="https://fiutolab.it/ap-costruzioni/index-en.html"><meta property="og:image" content="https://fiutolab.it/ap-costruzioni/img/og-ap.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}/* Layout: una tavola di progetto. Fasce verde menta del marchio, sezioni su carta, disegni tecnici che diventano rendering, e in fondo il cartiglio con i dati dell'azienda. */
 :root {
   --paper: #F6F8F6;
   --surface: #E9F1EB;
@@ -50,6 +50,7 @@ section[id] { scroll-margin-top: calc(var(--hdr-h) + 12px); }
 .draft { background: var(--ink); color: var(--paper); }
 .draft .wrap { padding-block: 7px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; display: flex; flex-wrap: wrap; gap: 2px 14px; justify-content: space-between; }
 .draft b { font-weight: 500; }
+@media (max-width: 600px) { .draft .wrap { font-size: 11.5px; padding-block: 6px; } .draft .wrap > span:last-child { display: none; } }
 
 /* Testata */
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--paper) 93%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -172,6 +173,29 @@ svg.house * { vector-effect: non-scaling-stroke; }
 .house--color.is-night .h-tint { opacity: 0.62; }
 .house--color.is-night .h-glow, .house--color.is-night .h-lampglow, .house--color.is-night .h-stars { opacity: 1; }
 
+/* Barra contatti (telefono) */
+.mbar { display: none; }
+.mb-toast { position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 70; background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); padding: 10px 14px; font-size: 14px; max-width: calc(100vw - 32px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+@media (max-width: 760px) {
+  .mbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #1D2521; padding: 8px max(10px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-left, 0px)); border-top: 1px solid #2B3A2D; }
+  .mbar a { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #F6F8F6; border: 1.5px solid #46524B; }
+  .mbar a.wa { background: #95E4A4; border-color: #95E4A4; color: #1D2521; }
+  .mbar svg { width: 19px; height: 19px; flex: none; }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Testate con dettaglio */
+.page-head .wrap.ph-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: 24px 48px; align-items: end; }
+.ph-text { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.ph-img { margin: 0; width: 100%; max-width: 280px; justify-self: end; display: flex; flex-direction: column; gap: 6px; }
+.ph-img img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1.5px solid var(--ink); background: var(--surface); }
+.ph-img figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--ink); opacity: 0.75; }
+@media (max-width: 760px) {
+  .page-head .wrap.ph-grid { grid-template-columns: minmax(0, 1fr); }
+  .ph-img { max-width: none; justify-self: stretch; }
+  .ph-img img { aspect-ratio: 16 / 9; }
+}
+
 /* Telefono e tablet */
 @media (max-width: 960px) {
   .sec-head { grid-template-columns: minmax(0, 1fr); }
@@ -192,16 +216,28 @@ svg.house * { vector-effect: non-scaling-stroke; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
 
 /* Apertura */
-.hero { background: var(--leaf); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr); gap: 32px 52px; align-items: center; padding-block: 56px 44px; }
-.hero-text { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.hero h1 { font-weight: 800; font-size: clamp(40px, 5.6vw, 72px); line-height: 0.97; font-variation-settings: 'wdth' 120; letter-spacing: -0.032em; }
-.hero .lede { font-size: 19px; max-width: 44ch; }
-.hero-img { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
-.hero-img img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 45% 50%; border: 1.5px solid var(--ink); background: var(--surface); }
+.hero { position: relative; min-height: clamp(560px, 82vh, 880px); display: flex; align-items: flex-end; overflow: hidden; background: #1D2521; color: #F6F8F6; isolation: isolate; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; z-index: -2; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bg { animation: kb 22s ease-out both; transform-origin: 40% 60%; }
+  @keyframes kb { from { transform: scale(1.08); } to { transform: scale(1); } }
+}
+.hero-shade { position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(90deg, rgba(16, 22, 19, 0.78) 0%, rgba(16, 22, 19, 0.5) 38%, rgba(16, 22, 19, 0) 68%),
+  linear-gradient(0deg, rgba(16, 22, 19, 0.7) 0%, rgba(16, 22, 19, 0) 42%),
+  linear-gradient(180deg, rgba(16, 22, 19, 0.35) 0%, rgba(16, 22, 19, 0) 18%); }
+.hero-in { width: 100%; display: flex; flex-direction: column; gap: 28px; padding-block: 120px 28px; }
+.hero-text { display: flex; flex-direction: column; gap: 20px; min-width: 0; max-width: 680px; }
+.hero .label { color: #DAF3E0; }
+.hero h1 { font-weight: 800; font-size: clamp(42px, 6.4vw, 88px); line-height: 0.95; font-variation-settings: 'wdth' 120; letter-spacing: -0.034em; text-wrap: balance; }
+.hero .lede { font-size: 19px; max-width: 46ch; color: #E9F1EB; }
+.hero .btn { color: #F6F8F6; border-color: rgba(246, 248, 246, 0.8); }
+.hero .btn:not(.btn-strong):hover { background: #F6F8F6; color: #1D2521; }
+.hero .btn-strong { background: #95E4A4; border-color: #95E4A4; color: #1D2521; }
+.hero-cap { font-family: var(--mono); font-size: 11.5px; color: rgba(246, 248, 246, 0.72); align-self: flex-end; }
 .cap { font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.facts { border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
-.facts .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 32px; padding-block: 18px 22px; }
+.facts { background: var(--leaf); border-bottom: 1px solid var(--line); }
+.facts .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 32px; padding-block: 22px 24px; }
 .fact b { display: block; font-family: var(--display); font-size: 21px; font-weight: 700; font-variation-settings: 'wdth' 112; }
 .fact span { font-size: 14.5px; }
 
@@ -224,6 +260,15 @@ svg.house * { vector-effect: non-scaling-stroke; }
 .build-stage svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .build-render { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
 .build-hint { position: absolute; left: 12px; top: 10px; font-family: var(--mono); font-size: 11.5px; background: var(--paper); border: 1px solid var(--line); padding: 3px 8px; }
+
+/* Da vicino */
+.dets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.det { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.det a { display: block; overflow: hidden; border: 1.5px solid var(--ink); background: var(--surface); }
+.det img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.6s ease; }
+.det a:hover img { transform: scale(1.05); }
+.det figcaption { display: flex; gap: 10px; font-weight: 600; font-size: 15.5px; }
+.det figcaption span { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); padding-top: 2px; }
 
 /* Disegno / rendering */
 .compare { position: relative; aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; border: 1.5px solid var(--ink); --x: 50%; background: var(--surface); user-select: none; touch-action: pan-y; }
@@ -290,7 +335,8 @@ svg.house * { vector-effect: non-scaling-stroke; }
 .ghost .who { margin-top: auto; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
 
 @media (max-width: 960px) {
-  .hero .wrap, .video-grid, .map-grid, .reviews { grid-template-columns: minmax(0, 1fr); }
+  .video-grid, .map-grid, .reviews { grid-template-columns: minmax(0, 1fr); }
+  .dets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .build-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .build-steps, .build-text h2 { display: none; }
   .build-now { display: block; }
@@ -300,13 +346,26 @@ svg.house * { vector-effect: non-scaling-stroke; }
 }
 @media (max-width: 600px) {
   .facts .wrap { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .hero { min-height: max(540px, calc(100svh - var(--hdr-h, 64px) - 100px)); }
+  .hero-bg { object-position: 34% 50%; }
+  .hero-shade { background:
+    linear-gradient(0deg, rgba(16, 22, 19, 0.92) 0%, rgba(16, 22, 19, 0.78) 45%, rgba(16, 22, 19, 0.15) 75%, rgba(16, 22, 19, 0.3) 100%); }
+  .hero-in { padding-block: 72px 18px; gap: 14px; }
+  .hero-text { gap: 16px; }
+  .hero .lede { font-size: 16.5px; }
+  .hero .actions { gap: 10px; }
+  .hero-cap { align-self: flex-start; }
+  .dets { gap: 12px; }
+  .det figcaption { font-size: 14.5px; }
   .build-track { height: 340vh; }
 }
 </style></head><body><div class="draft"><div class="wrap"><span><b>Demo</b> · some texts, data and images are examples · other pages are in Italian</span><span>A FiuTO proposal</span></div></div><header class="top"><div class="wrap"><a class="brand-logo" href="index-en.html" aria-label="AP Costruzioni, go to home page"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AP Costruzioni" viewBox="41.8 166.4 782.8 241.8"><g transform="translate(0 595.32) rotate(-90)"><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 425.875 280.558594 L 387.515625 304.054688 L 387.515625 250.59375 Z M 425.875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 425.875 280.558594 L 425.875 304.054688 L 387.515625 304.054688 Z M 425.875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 280.558594 L 225.460938 304.054688 L 225.460938 280.558594 Z M 387.515625 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 280.558594 L 387.515625 304.054688 L 225.460938 304.054688 Z M 387.515625 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 250.59375 L 225.460938 154.464844 L 225.460938 124.617188 Z M 387.515625 250.59375 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 387.515625 250.59375 L 387.515625 280.558594 L 225.460938 154.464844 Z M 387.515625 250.59375 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 124.617188 L 213.714844 145.355469 L 213.714844 115.507812 Z M 225.460938 124.617188 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 124.617188 L 225.460938 154.464844 L 213.714844 145.355469 Z M 225.460938 124.617188 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 280.558594 L 201.96875 292.308594 L 201.96875 280.558594 Z M 225.460938 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 225.460938 280.558594 L 225.460938 292.308594 L 201.96875 292.308594 Z M 225.460938 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 201.96875 280.558594 L 190.101562 304.054688 L 190.101562 280.558594 Z M 201.96875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 201.96875 280.558594 L 201.96875 304.054688 L 190.101562 304.054688 Z M 201.96875 280.558594 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 213.714844 44.789062 L 190.101562 127.015625 L 190.101562 44.789062 Z M 213.714844 44.789062 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 213.714844 44.789062 L 213.714844 145.355469 L 190.101562 127.015625 Z M 213.714844 44.789062 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M -0.0017264 -0.000835336 L -0.0017264 109.75981 M 31.518611 -0.000835336 L 31.518611 94.398534 M 31.518611 424.80154 L 31.518611 1036.958297 M -0.0017264 582.559655 L -0.0017264 1036.958297 M 314.721932 346.081518 L 47.197958 346.081518 M 15.839264 346.081518 L -0.0017264 346.081518 M 263.517679 377.601855 L -0.0017264 377.601855 M 47.197958 361.922508 L 15.839264 361.922508 M 147.520752 393.281202 L -0.0017264 393.281202 M 116.000415 424.80154 L 31.518611 424.80154 M 263.517679 314.717609 L -0.0017264 314.717609 M 47.197958 330.402171 L 15.839264 330.402171 " transform="matrix(0.749144, 0, 0, 0.749144, 190.102856, 44.789688)"/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 300.617188 227.820312 L 277.003906 268.695312 L 277.003906 209.480469 Z M 300.617188 227.820312 "/><path fill-rule="evenodd" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 300.617188 227.820312 L 300.617188 268.695312 L 277.003906 268.695312 Z M 300.617188 227.820312 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M 0.000748028 0.00184739 L -31.519589 0.00184739 M 167.201928 15.837623 L -116.001393 -204.481452 M 115.997675 15.837623 L -147.52173 -189.120176 M 0.000748028 -54.560404 L -31.519589 -79.04146 M 167.201928 78.721869 L -31.519589 233.278415 M 115.997675 78.721869 L 0.000748028 168.960241 M -147.52173 283.679669 L -147.52173 94.401216 M 0.000748028 94.401216 L 0.000748028 168.960241 M -31.519589 125.921554 L -31.519589 233.278415 M 0.000748028 0.00184739 L 0.000748028 -54.560404 M -31.519589 0.00184739 L -31.519589 -79.04146 M -147.52173 78.721869 L -147.52173 15.837623 M -131.68074 63.042522 L -131.68074 31.522185 M -100.322046 63.042522 L -100.322046 31.522185 M -116.001393 -298.880821 L -147.52173 -298.880821 " transform="matrix(0.749144, 0, 0, 0.749144, 300.616627, 268.693929)"/><path fill-rule="nonzero" fill="#95E4A4" stroke="#95E4A4" stroke-width="0.7" vector-effect="non-scaling-stroke" d="M 240.226562 409.53125 L 238.667969 415.765625 C 233.597656 414.476562 229.734375 412.148438 227.066406 408.785156 C 224.398438 405.429688 223.074219 401.316406 223.066406 396.453125 C 223.074219 391.433594 224.089844 387.34375 226.144531 384.195312 C 228.195312 381.050781 231.164062 378.652344 235.042969 377.003906 C 238.933594 375.355469 243.105469 374.53125 247.5625 374.53125 C 252.433594 374.53125 256.671875 375.460938 260.296875 377.320312 C 263.921875 379.179688 266.671875 381.816406 268.554688 385.230469 C 270.433594 388.65625 271.371094 392.421875 271.371094 396.527344 C 271.371094 401.1875 270.1875 405.113281 267.804688 408.289062 C 265.421875 411.464844 262.082031 413.683594 257.773438 414.925781 L 256.335938 408.8125 C 259.734375 407.734375 262.214844 406.167969 263.765625 404.117188 C 265.324219 402.0625 266.097656 399.488281 266.097656 396.378906 C 266.097656 392.804688 265.234375 389.816406 263.511719 387.410156 C 261.789062 385.011719 259.480469 383.320312 256.574219 382.347656 C 253.675781 381.371094 250.6875 380.886719 247.601562 380.886719 C 243.628906 380.886719 240.152344 381.460938 237.1875 382.617188 C 234.21875 383.769531 232.011719 385.566406 230.542969 388.003906 C 229.074219 390.445312 228.339844 393.082031 228.339844 395.914062 C 228.339844 399.367188 229.34375 402.289062 231.335938 404.679688 C 233.335938 407.074219 236.300781 408.695312 240.226562 409.53125 Z M 246.597656 421.398438 C 254.34375 421.398438 260.410156 423.488281 264.792969 427.667969 C 269.183594 431.851562 271.371094 437.242188 271.371094 443.851562 C 271.371094 448.179688 270.34375 452.078125 268.285156 455.554688 C 266.222656 459.027344 263.355469 461.679688 259.667969 463.5 C 255.984375 465.320312 251.808594 466.226562 247.136719 466.226562 C 242.402344 466.226562 238.167969 465.269531 234.429688 463.351562 C 230.699219 461.433594 227.867188 458.722656 225.949219 455.199219 C 224.03125 451.6875 223.074219 447.890625 223.066406 443.8125 C 223.074219 439.410156 224.128906 435.460938 226.25 431.984375 C 228.375 428.507812 231.269531 425.878906 234.9375 424.089844 C 238.609375 422.296875 242.496094 421.398438 246.597656 421.398438 Z M 246.511719 427.753906 C 240.878906 427.753906 236.445312 429.28125 233.199219 432.320312 C 229.964844 435.371094 228.339844 439.191406 228.339844 443.785156 C 228.339844 448.464844 229.980469 452.316406 233.253906 455.34375 C 236.527344 458.371094 241.171875 459.875 247.179688 459.875 C 250.984375 459.875 254.3125 459.230469 257.152344 457.941406 C 259.992188 456.652344 262.191406 454.757812 263.75 452.265625 C 265.316406 449.777344 266.097656 446.984375 266.097656 443.882812 C 266.097656 439.476562 264.597656 435.691406 261.585938 432.515625 C 258.574219 429.339844 253.554688 427.753906 246.511719 427.753906 Z M 238.886719 472.101562 L 239.367188 477.976562 C 237.027344 478.253906 235.105469 478.890625 233.605469 479.894531 C 232.105469 480.898438 230.894531 482.445312 229.964844 484.550781 C 229.042969 486.65625 228.578125 489.023438 228.578125 491.652344 C 228.578125 493.992188 228.929688 496.058594 229.636719 497.84375 C 230.339844 499.632812 231.296875 500.964844 232.519531 501.835938 C 233.746094 502.710938 235.074219 503.144531 236.511719 503.144531 C 237.980469 503.144531 239.253906 502.734375 240.347656 501.902344 C 241.441406 501.078125 242.355469 499.691406 243.089844 497.753906 C 243.585938 496.507812 244.339844 493.757812 245.367188 489.503906 C 246.402344 485.25 247.375 482.261719 248.289062 480.535156 C 249.457031 478.304688 250.910156 476.640625 252.648438 475.546875 C 254.386719 474.453125 256.328125 473.898438 258.46875 473.898438 C 260.835938 473.898438 263.039062 474.566406 265.09375 475.898438 C 267.144531 477.234375 268.710938 479.171875 269.773438 481.726562 C 270.839844 484.289062 271.371094 487.128906 271.371094 490.246094 C 271.371094 493.691406 270.816406 496.734375 269.707031 499.363281 C 268.597656 501.992188 266.957031 504.015625 264.800781 505.421875 C 262.640625 506.839844 260.191406 507.597656 257.464844 507.699219 L 256.988281 501.828125 C 259.90625 501.511719 262.117188 500.449219 263.617188 498.621094 C 265.113281 496.800781 265.855469 494.113281 265.855469 490.546875 C 265.855469 486.84375 265.175781 484.140625 263.804688 482.441406 C 262.433594 480.746094 260.785156 479.894531 258.851562 479.894531 C 257.171875 479.894531 255.796875 480.5 254.710938 481.699219 C 253.628906 482.882812 252.527344 485.960938 251.390625 490.941406 C 250.25 495.933594 249.261719 499.347656 248.410156 501.207031 C 247.164062 503.917969 245.578125 505.917969 243.660156 507.207031 C 241.742188 508.496094 239.523438 509.140625 237.023438 509.140625 C 234.550781 509.140625 232.210938 508.433594 230.015625 507.019531 C 227.820312 505.601562 226.113281 503.566406 224.894531 500.90625 C 223.679688 498.253906 223.074219 495.265625 223.066406 491.9375 C 223.074219 487.730469 223.6875 484.207031 224.914062 481.359375 C 226.152344 478.515625 228.007812 476.28125 230.480469 474.664062 C 232.960938 473.046875 235.761719 472.191406 238.886719 472.101562 Z M 223.785156 529.515625 L 265.015625 529.515625 L 265.015625 514.171875 L 270.53125 514.171875 L 270.53125 551.089844 L 265.015625 551.089844 L 265.015625 535.75 L 223.785156 535.75 Z M 223.785156 557.683594 L 270.53125 557.683594 L 270.53125 578.335938 C 270.53125 582.472656 270.113281 585.613281 269.273438 587.761719 C 268.433594 589.910156 266.941406 591.628906 264.816406 592.917969 C 262.6875 594.203125 260.328125 594.839844 257.742188 594.839844 C 254.425781 594.839844 251.621094 593.777344 249.34375 591.648438 C 247.066406 589.523438 245.613281 586.234375 245 581.785156 C 244.222656 583.417969 243.449219 584.660156 242.683594 585.5 C 241.039062 587.304688 238.96875 589.003906 236.476562 590.59375 L 223.785156 598.625 L 223.785156 590.921875 L 233.484375 584.789062 C 236.289062 582.996094 238.421875 581.523438 239.90625 580.359375 C 241.390625 579.207031 242.4375 578.164062 243.039062 577.25 C 243.636719 576.335938 244.054688 575.402344 244.296875 574.449219 C 244.445312 573.761719 244.519531 572.621094 244.519531 571.035156 L 244.519531 563.917969 L 223.785156 563.917969 Z M 250.035156 563.917969 L 250.035156 577.101562 C 250.035156 579.910156 250.328125 582.097656 250.902344 583.671875 C 251.488281 585.246094 252.417969 586.445312 253.691406 587.261719 C 254.964844 588.085938 256.351562 588.488281 257.847656 588.488281 C 260.042969 588.488281 261.847656 587.703125 263.257812 586.113281 C 264.671875 584.527344 265.375 582.023438 265.375 578.59375 L 265.375 563.917969 Z M 270.53125 635.117188 L 270.53125 641.347656 L 243.5625 641.347656 C 238.871094 641.347656 235.148438 640.824219 232.390625 639.765625 C 229.636719 638.710938 227.386719 636.800781 225.65625 634.042969 C 223.933594 631.289062 223.074219 627.660156 223.066406 623.179688 C 223.074219 618.828125 223.820312 615.269531 225.328125 612.5 C 226.832031 609.726562 229.011719 607.75 231.867188 606.566406 C 234.722656 605.382812 238.617188 604.789062 243.5625 604.789062 L 270.53125 604.789062 L 270.53125 611.023438 L 243.710938 611.023438 C 239.679688 611.023438 236.707031 611.398438 234.789062 612.148438 C 232.878906 612.894531 231.402344 614.175781 230.371094 615.988281 C 229.335938 617.800781 228.820312 620.027344 228.820312 622.648438 C 228.820312 627.144531 229.84375 630.34375 231.890625 632.253906 C 233.941406 634.164062 237.882812 635.117188 243.710938 635.117188 Z M 223.785156 647.699219 L 229.515625 647.699219 L 259.398438 671.742188 C 261.503906 673.457031 263.375 675.082031 265.015625 676.625 L 265.015625 650.457031 L 270.53125 650.457031 L 270.53125 683.898438 L 265.015625 683.898438 L 232.632812 657.671875 L 229.296875 654.804688 L 229.296875 684.617188 L 223.785156 684.617188 Z M 223.785156 692.53125 L 270.53125 692.53125 L 270.53125 698.761719 L 223.785156 698.761719 Z M 246.597656 707.511719 C 254.34375 707.511719 260.410156 709.601562 264.792969 713.78125 C 269.183594 717.964844 271.371094 723.355469 271.371094 729.964844 C 271.371094 734.292969 270.34375 738.191406 268.285156 741.667969 C 266.222656 745.140625 263.355469 747.792969 259.667969 749.613281 C 255.984375 751.433594 251.808594 752.339844 247.136719 752.339844 C 242.402344 752.339844 238.167969 751.382812 234.429688 749.464844 C 230.699219 747.546875 227.867188 744.835938 225.949219 741.3125 C 224.03125 737.800781 223.074219 734.003906 223.066406 729.925781 C 223.074219 725.523438 224.128906 721.574219 226.25 718.097656 C 228.375 714.621094 231.269531 711.992188 234.9375 710.203125 C 238.609375 708.410156 242.496094 707.511719 246.597656 707.511719 Z M 246.511719 713.867188 C 240.878906 713.867188 236.445312 715.394531 233.199219 718.433594 C 229.964844 721.484375 228.339844 725.304688 228.339844 729.898438 C 228.339844 734.578125 229.980469 738.429688 233.253906 741.457031 C 236.527344 744.484375 241.171875 745.988281 247.179688 745.988281 C 250.984375 745.988281 254.3125 745.34375 257.152344 744.054688 C 259.992188 742.765625 262.191406 740.871094 263.75 738.378906 C 265.316406 735.890625 266.097656 733.097656 266.097656 729.996094 C 266.097656 725.589844 264.597656 721.804688 261.585938 718.628906 C 258.574219 715.453125 253.554688 713.867188 246.511719 713.867188 Z M 223.785156 760.253906 L 270.53125 760.253906 L 270.53125 766.546875 L 233.753906 791.296875 L 270.53125 791.296875 L 270.53125 797.171875 L 223.785156 797.171875 L 223.785156 790.886719 L 260.550781 766.125 L 223.785156 766.125 Z M 223.785156 808.4375 L 270.53125 808.4375 L 270.53125 814.671875 L 223.785156 814.671875 Z M 223.785156 808.4375 "/><path fill="none" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" d="M 568.481927 373.91761 L 568.481927 436.801856 M 285.278606 1096.158298 L 253.758269 1096.158298 " transform="matrix(0.749144, 0, 0, 0.749144, 0, 0.440345)"/></g></svg></a><button class="menu-btn" type="button" aria-expanded="false" data-open="Menu" data-close="Close">Menu</button><div class="right"><nav class="nav" aria-label="Pagine"><a href="come-lavoriamo.html">How we build</a><a href="progetti.html">Projects</a><a href="immagina.html">Design your home</a><a href="diario.html">Site diary</a><a href="chi-siamo.html">About us</a><a href="guide.html">Guides</a><a class="cta" href="contatti.html">Contact</a></nav><div class="util"><a href="area-clienti.html">Client area</a><a href="progettisti.html">Architects</a><a href="index.html">IT</a></div></div></div></header><main id="top">
   <div class="hero">
-    <div class="wrap">
+    <img class="hero-bg" src="img/render-1.webp" srcset="img/render-1-720.webp 720w, img/render-1.webp 1600w" sizes="100vw" width="1600" height="900" fetchpriority="high" alt="Rendering of an AP Costruzioni home with a gable roof and garden terrace at sunset">
+    <span class="hero-shade" aria-hidden="true"></span>
+    <div class="wrap hero-in">
       <div class="hero-text">
-        <p class="label" style="color: var(--ink)">Prefabricated timber homes · Piedmont, Italy</p>
+        <p class="label">Prefabricated timber homes · Piedmont, Italy</p>
         <h1>Made-to-measure timber homes, assembled in days.</h1>
         <p class="lede">We design your home with you, build the walls indoors in our workshop and assemble them on site already insulated, with the windows fitted.</p>
         <div class="actions">
@@ -314,17 +373,14 @@ svg.house * { vector-effect: non-scaling-stroke; }
           <a class="btn" href="immagina.html">Design your home</a>
         </div>
       </div>
-      <figure class="hero-img">
-        <img src="img/render-1.webp" srcset="img/render-1-720.webp 720w, img/render-1.webp 1600w" sizes="(max-width: 960px) 100vw, 56vw" width="1600" height="900" alt="Rendering of an AP Costruzioni home with a gable roof and garden terrace at sunset">
-        <figcaption class="cap">Rendering · AP Costruzioni project</figcaption>
-      </figure>
+      <p class="hero-cap">Rendering · AP Costruzioni project</p>
     </div>
-    <div class="facts">
-      <div class="wrap">
-        <div class="fact"><b>5–10 days</b><span>to raise the structure on site</span></div>
-        <div class="fact"><b>Class A4</b><span>Italy's top energy rating</span></div>
-        <div class="fact"><b>One point of contact</b><span>from design to handing over the keys</span></div>
-      </div>
+  </div>
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>5–10 days</b><span>to raise the structure on site</span></div>
+      <div class="fact"><b>Class A4</b><span>Italy's top energy rating</span></div>
+      <div class="fact"><b>One point of contact</b><span>from design to handing over the keys</span></div>
     </div>
   </div>
 
@@ -351,6 +407,22 @@ svg.house * { vector-effect: non-scaling-stroke; }
             <span class="build-hint">Scroll to build it</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="dettagli">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">The details</p>
+        <h2>Up close.</h2>
+        <p>You judge a house by its details: where timber meets glass, how the light comes in, how the roof is finished.</p>
+      </div>
+      <div class="dets">
+        <figure class="det"><a href="progetti.html#dettagli"><img src="img/det-ingresso.webp" width="400" height="500" loading="lazy" alt="Detail of the entrance clad in timber slats"></a><figcaption><span>01</span>The timber-slat entrance</figcaption></figure>
+        <figure class="det"><a href="progetti.html#dettagli"><img src="img/det-lucernari.webp" width="400" height="500" loading="lazy" alt="Detail of the roof skylights"></a><figcaption><span>02</span>The skylights</figcaption></figure>
+        <figure class="det"><a href="progetti.html#dettagli"><img src="img/det-sottotetto.webp" width="400" height="500" loading="lazy" alt="Detail of the gable with its timber-clad soffit"></a><figcaption><span>03</span>The timber soffit</figcaption></figure>
+        <figure class="det"><a href="progetti.html#dettagli"><img src="img/det-terrazza.webp" width="400" height="500" loading="lazy" alt="Detail of the terrace overlooking the garden"></a><figcaption><span>04</span>The garden terrace</figcaption></figure>
       </div>
     </div>
   </section>
@@ -458,7 +530,7 @@ svg.house * { vector-effect: non-scaling-stroke; }
       </div>
     </div>
   </div>
-</main><footer><div class="wrap"><div class="foot-nav"><div><h4>Site</h4><ul><li><a href="index-en.html">Home</a></li><li><a href="come-lavoriamo.html">How we build</a></li><li><a href="progetti.html">Projects</a></li><li><a href="immagina.html">Design your home</a></li></ul></div><div><h4>For you</h4><ul><li><a href="diario.html">Site diary</a></li><li><a href="area-clienti.html">Client area</a></li><li><a href="progettisti.html">Architects</a></li><li><a href="chi-siamo.html#lavora">Join us</a></li></ul></div><div><h4>Learn</h4><ul><li><a href="guide.html">Guides</a></li><li><a href="guide.html#guida">Free guide</a></li><li><a href="case-in-legno-pinerolo.html">Timber homes in Pinerolo</a></li></ul></div><div><h4>Contact</h4><ul><li><a href="contatti.html">Write to us</a></li><li><a href="contatti.html#terreno">Your plot of land</a></li></ul></div></div><div class="cartiglio"><div><span class="label">Company</span><b>AP Costruzioni</b><span>Via Esempio 1, Torino</span></div><div><span class="label">VAT no.</span><b>00000000000</b><span>REA TO-000000</span></div><div><span class="label">Contact</span><b>info@tuodominio.it</b><span>+39 011 000 0000</span></div><div><span class="label">Drawing</span><b>Website</b><span>Scale 1:1</span></div></div><div class="credits"><span>Privacy · Cookie</span><span>Website by FiuTO · fiutolab.it</span></div></div></footer><script>// Disegno della casa AP (prospetto frontale), con le stesse proporzioni del rendering frontale.
+</main><footer><div class="wrap"><div class="foot-nav"><div><h4>Site</h4><ul><li><a href="index-en.html">Home</a></li><li><a href="come-lavoriamo.html">How we build</a></li><li><a href="progetti.html">Projects</a></li><li><a href="immagina.html">Design your home</a></li></ul></div><div><h4>For you</h4><ul><li><a href="diario.html">Site diary</a></li><li><a href="area-clienti.html">Client area</a></li><li><a href="progettisti.html">Architects</a></li><li><a href="chi-siamo.html#lavora">Join us</a></li></ul></div><div><h4>Learn</h4><ul><li><a href="guide.html">Guides</a></li><li><a href="guide.html#guida">Free guide</a></li><li><a href="case-in-legno-pinerolo.html">Timber homes in Pinerolo</a></li></ul></div><div><h4>Contact</h4><ul><li><a href="contatti.html">Write to us</a></li><li><a href="contatti.html#terreno">Your plot of land</a></li></ul></div></div><div class="cartiglio"><div><span class="label">Company</span><b>AP Costruzioni</b><span>Via Esempio 1, Torino</span></div><div><span class="label">VAT no.</span><b>00000000000</b><span>REA TO-000000</span></div><div><span class="label">Contact</span><b>info@tuodominio.it</b><span>+39 011 000 0000</span></div><div><span class="label">Drawing</span><b>Website</b><span>Scale 1:1</span></div></div><div class="credits"><span>Privacy · Cookie</span><span>Website by FiuTO · fiutolab.it</span></div></div></footer><nav class="mbar" aria-label="Quick contact"><a href="contatti.html" data-mb="On the real site this button calls AP."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.5 4.5-2.2 1.4a11 11 0 0 0 6.2 6.2l1.4-2.2 4.5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Call</a><a class="wa" href="contatti.html" data-mb="On the real site this button opens WhatsApp with AP."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>WhatsApp</a><a href="contatti.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Write</a></nav><div class="mb-toast" role="status" hidden></div><script>// Disegno della casa AP (prospetto frontale), con le stesse proporzioni del rendering frontale.
 // Usato da: casa che si costruisce (Home), configuratore, "mettila sul tuo terreno", diario di cantiere.
 window.APHouse = (function () {
   var WALL = [262, 1235], TOP = 268, BOT = 672, N = 8;
@@ -556,6 +628,18 @@ window.APHouse = (function () {
       btn.textContent = open ? (btn.getAttribute('data-close') || 'Chiudi') : (btn.getAttribute('data-open') || 'Menu');
     });
   }
+
+  // Barra contatti: nella demo spiega cosa farebbe il pulsante
+  var toast = document.querySelector('.mb-toast'), tt = null;
+  document.querySelectorAll('[data-mb]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!toast) return;
+      toast.textContent = a.getAttribute('data-mb');
+      toast.hidden = false;
+      clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 3200);
+    });
+  });
 
   // Moduli della demo: non inviano nulla
   document.querySelectorAll('form[data-demo]').forEach(function (f) {
