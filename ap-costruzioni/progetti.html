@@ -104,6 +104,11 @@ a { color: inherit; }
 .page-hero.plain { background: var(--dark-bg); min-height: clamp(380px, 56svh, 620px); }
 .page-hero.plain::before { display: none; }
 
+/* Foto di repertorio: segnalate sempre */
+.ph-rep { position: relative; display: block; overflow: hidden; background: var(--bg-alt); }
+.ph-rep img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rep { position: absolute; left: 10px; bottom: 10px; font-size: 11.5px; line-height: 1.3; background: rgba(13, 20, 16, 0.6); color: #F4F7F3; padding: 3px 8px; pointer-events: none; }
+
 /* Cartellino, come nelle gallerie */
 .wl { display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; line-height: 1.4; }
 .wl b { font-weight: 520; font-variation-settings: "wdth" 106; }
@@ -217,6 +222,10 @@ footer .legal div { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .gal .g-full { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
 .gal .g-half { grid-column: span 3; aspect-ratio: 3 / 2; }
 .gal .g-third { grid-column: span 2; aspect-ratio: 4 / 5; }
+.gal-in-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; padding: clamp(28px, 4vw, 48px) 0 4px; }
+.gal .g-in { grid-column: span 3; aspect-ratio: 3 / 2; position: relative; }
+.gal .g-tall { grid-column: span 2; aspect-ratio: 3 / 4; position: relative; }
+.gal .g-wide { grid-column: span 4; aspect-ratio: auto; position: relative; }
 .lb { border: 0; padding: 0; margin: auto; max-width: min(1400px, 96vw); width: 100%; background: transparent; color: #F4F7F3; }
 .lb::backdrop { background: rgba(10, 16, 12, 0.94); }
 .lb figure { display: flex; flex-direction: column; gap: 14px; }
@@ -297,7 +306,9 @@ svg.elev * { vector-effect: non-scaling-stroke; }
 @media (max-width: 640px) {
   .gal .g-half { grid-column: 1 / -1; }
   .gal .g-third { grid-column: span 3; }
-  .gal .g-third:last-child { display: none; }
+  .gal .g-third:nth-child(6) { display: none; }
+  .gal .g-in, .gal .g-wide { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+  .gal .g-tall { grid-column: 1 / -1; aspect-ratio: 4 / 5; }
   .gal .g-full { aspect-ratio: 16 / 10; }
   .others { grid-template-columns: minmax(0, 1fr); }
   .talk-panel p.d { min-height: 0; }
@@ -332,6 +343,11 @@ svg.elev * { vector-effect: non-scaling-stroke; }
         <button class="g-third" type="button" data-n="3"><img src="img/det-finestra.webp" width="400" height="500" loading="lazy" alt="Dettaglio di una finestra e dello zoccolo"></button>
         <button class="g-third" type="button" data-n="4"><img src="img/det-sottotetto.webp" width="400" height="500" loading="lazy" alt="Dettaglio del sottotetto rivestito in legno"></button>
         <button class="g-third" type="button" data-n="5"><img src="img/det-lucernari.webp" width="400" height="500" loading="lazy" alt="Dettaglio dei lucernari sul tetto"></button>
+        <div class="gal-in-head"><h3 class="h3">Dentro</h3><span class="example">Interni di repertorio: nel sito vero, le foto delle case di AP.</span></div>
+        <button class="g-in" type="button" data-n="6"><img src="img/f-camera.webp" srcset="img/f-camera-800.webp 800w, img/f-camera.webp 1800w" sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" alt="Camera sotto il tetto, con le travi in legno a vista e il camino"><span class="rep">Foto di repertorio</span></button>
+        <button class="g-in" type="button" data-n="7"><img src="img/f-cucina.webp" srcset="img/f-cucina-800.webp 800w, img/f-cucina.webp 1800w" sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" alt="Cucina con pavimento in legno"><span class="rep">Foto di repertorio</span></button>
+        <button class="g-tall" type="button" data-n="8"><img src="img/f-bagno.webp" srcset="img/f-bagno-800.webp 800w, img/f-bagno.webp 1800w" sizes="(max-width: 640px) 50vw, 33vw" loading="lazy" alt="Bagno con parete in legno e lastra di marmo"><span class="rep">Foto di repertorio</span></button>
+        <button class="g-wide" type="button" data-n="9"><img src="img/f-scala.webp" srcset="img/f-scala-800.webp 800w, img/f-scala.webp 1800w" sizes="(max-width: 640px) 100vw, 66vw" loading="lazy" alt="Scala in legno scuro con il corrimano"><span class="rep">Foto di repertorio</span></button>
       </div>
     </div>
   </section>
@@ -474,7 +490,11 @@ svg.elev * { vector-effect: non-scaling-stroke; }
     ['img/render-6.webp', 'La facciata principale con l\'ingresso in legno'],
     ['img/det-finestra.webp', 'Una finestra e lo zoccolo'],
     ['img/det-sottotetto.webp', 'Il sottotetto rivestito in legno'],
-    ['img/det-lucernari.webp', 'I lucernari sul tetto']
+    ['img/det-lucernari.webp', 'I lucernari sul tetto'],
+    ['img/f-camera.webp', 'Camera sotto il tetto (foto di repertorio)'],
+    ['img/f-cucina.webp', 'Cucina (foto di repertorio)'],
+    ['img/f-bagno.webp', 'Bagno (foto di repertorio)'],
+    ['img/f-scala.webp', 'Scala in legno (foto di repertorio)']
   ];
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), cur = 0;
   function showLb(i) { cur = (i + G.length) % G.length; lbImg.src = G[cur][0]; lbImg.alt = G[cur][1]; lbCap.textContent = (cur + 1) + ' di ' + G.length + '. ' + G[cur][1]; }

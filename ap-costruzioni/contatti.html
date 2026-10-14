@@ -104,6 +104,11 @@ a { color: inherit; }
 .page-hero.plain { background: var(--dark-bg); min-height: clamp(380px, 56svh, 620px); }
 .page-hero.plain::before { display: none; }
 
+/* Foto di repertorio: segnalate sempre */
+.ph-rep { position: relative; display: block; overflow: hidden; background: var(--bg-alt); }
+.ph-rep img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rep { position: absolute; left: 10px; bottom: 10px; font-size: 11.5px; line-height: 1.3; background: rgba(13, 20, 16, 0.6); color: #F4F7F3; padding: 3px 8px; pointer-events: none; }
+
 /* Cartellino, come nelle gallerie */
 .wl { display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; line-height: 1.4; }
 .wl b { font-weight: 520; font-variation-settings: "wdth" 106; }

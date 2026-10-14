@@ -104,6 +104,11 @@ a { color: inherit; }
 .page-hero.plain { background: var(--dark-bg); min-height: clamp(380px, 56svh, 620px); }
 .page-hero.plain::before { display: none; }
 
+/* Foto di repertorio: segnalate sempre */
+.ph-rep { position: relative; display: block; overflow: hidden; background: var(--bg-alt); }
+.ph-rep img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rep { position: absolute; left: 10px; bottom: 10px; font-size: 11.5px; line-height: 1.3; background: rgba(13, 20, 16, 0.6); color: #F4F7F3; padding: 3px 8px; pointer-events: none; }
+
 /* Cartellino, come nelle gallerie */
 .wl { display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; line-height: 1.4; }
 .wl b { font-weight: 520; font-variation-settings: "wdth" 106; }
@@ -239,6 +244,12 @@ footer .legal div { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .q figcaption { display: flex; flex-direction: column; gap: 8px; max-width: 34ch; }
 .q p { color: var(--muted); }
 
+/* Dentro */
+.inside .sec-head { margin-bottom: clamp(32px, 4vw, 56px); }
+.in-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: clamp(220px, 23vw, 340px) clamp(220px, 23vw, 340px); gap: clamp(10px, 1.2vw, 16px); }
+.in-grid .ph-rep:first-child { grid-row: span 2; }
+.in-grid .ph-rep:nth-child(2) { grid-column: span 2; }
+
 /* La casa prende forma */
 .build { background: var(--bg-alt); }
 .build-track { height: 360vh; position: relative; }
@@ -285,6 +296,9 @@ footer .legal div { display: flex; flex-wrap: wrap; gap: 6px 22px; }
   .q-grid { grid-template-columns: minmax(0, 1fr); gap: 56px; }
   .q:nth-child(n) { margin-top: 0; }
   .q img { aspect-ratio: 4 / 3; }
+  .in-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: none; }
+  .in-grid .ph-rep { aspect-ratio: 4 / 5; }
+  .in-grid .ph-rep:first-child, .in-grid .ph-rep:nth-child(2) { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 4 / 3; }
   .build-track { height: 300vh; }
   .room img { height: 70svh; object-position: 40% 60%; }
 }
@@ -313,6 +327,21 @@ footer .legal div { display: flex; flex-wrap: wrap; gap: 6px 22px; }
       <figure class="q"><img src="img/det-ingresso.webp" width="400" height="500" loading="lazy" alt="Dettaglio dell'ingresso rivestito in doghe di legno"><figcaption><h2 class="h3">Su misura</h2><p>Nessun catalogo da cui scegliere. Ogni casa parte dal tuo terreno, dalla luce e da come vivi.</p></figcaption></figure>
       <figure class="q"><img src="img/det-lucernari.webp" width="400" height="500" loading="lazy" alt="Dettaglio dei lucernari sul tetto"><figcaption><h2 class="h3">Precisa</h2><p>Le pareti si costruiscono al millimetro, al riparo dalla pioggia, con isolamento e serramenti già al loro posto.</p></figcaption></figure>
       <figure class="q"><img src="img/det-terrazza.webp" width="416" height="520" loading="lazy" alt="Dettaglio della terrazza affacciata sul giardino"><figcaption><h2 class="h3">Pronta presto</h2><p>La struttura si alza in 5–10 giorni. Le finiture seguono senza attese per l'asciugatura.</p></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec inside" style="padding-top: 0" aria-label="Dentro la casa">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Dentro, il legno.</h2>
+        <p>Soffitti in legno, grandi vetrate, luce che arriva dall'alto. Gli spazi si disegnano intorno a come vivi. <span class="example">Foto di repertorio: nel sito vero, gli interni delle case di AP.</span></p>
+      </div>
+      <div class="in-grid">
+        <figure class="ph-rep"><img src="img/f-soggiorno.webp" srcset="img/f-soggiorno-800.webp 800w, img/f-soggiorno.webp 1800w" sizes="(max-width: 760px) 100vw, 45vw" loading="lazy" alt="Soggiorno luminoso con due grandi finestre sul giardino e pavimento in legno chiaro"><span class="rep">Foto di repertorio</span></figure>
+        <figure class="ph-rep"><img src="img/f-camera.webp" srcset="img/f-camera-800.webp 800w, img/f-camera.webp 1800w" sizes="(max-width: 760px) 100vw, 55vw" loading="lazy" alt="Camera sotto il tetto, con le travi in legno a vista e il camino"><span class="rep">Foto di repertorio</span></figure>
+        <figure class="ph-rep"><img src="img/f-cucina.webp" srcset="img/f-cucina-800.webp 800w, img/f-cucina.webp 1800w" sizes="(max-width: 760px) 50vw, 27vw" loading="lazy" alt="Cucina scura con pavimento in legno e finestra sul verde"><span class="rep">Foto di repertorio</span></figure>
+        <figure class="ph-rep"><img src="img/f-terrazza.webp" srcset="img/f-terrazza-800.webp 800w, img/f-terrazza.webp 1800w" sizes="(max-width: 760px) 50vw, 27vw" loading="lazy" alt="Terrazza in legno al tramonto, con la tavola apparecchiata"><span class="rep">Foto di repertorio</span></figure>
+      </div>
     </div>
   </section>
 
