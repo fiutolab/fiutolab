@@ -275,3 +275,11 @@ p { margin: 0; }
 .locali a { color: var(--accent); font-weight: 500; }
 @media (max-width: 900px) { .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .signals { grid-template-columns: minmax(0, 1fr); } .signals .card-dark { min-height: 0; } }
+
+/* Pagina privacy */
+.prose { max-width: 720px; display: flex; flex-direction: column; gap: 14px; }
+.prose h2 { font-weight: 600; font-size: 24px; letter-spacing: -0.01em; margin-top: 22px; }
+.prose h2:first-child { margin-top: 0; }
+.prose p { color: var(--muted); }
+.prose a { color: var(--accent); }
+.prose .updated { margin-top: 24px; font-size: 14px; }
